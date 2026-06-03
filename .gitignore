@@ -1,1 +1,6 @@
 /site/
+.DS_Store
+.venv/
+.claude/
+.cache/
+.agents/
