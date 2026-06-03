@@ -14,7 +14,7 @@ Anything involving physical hardware belongs in the lab. This includes:
 
 - Charging, configuring, or returning instruments before and after a site visit.
 
-- Working with the iPad fleet, label printers, or any shared physical asset.
+- Working with shared physical assets.
 
 - Site visits themselves, and any pre-visit prep that requires touching the gear.
 
@@ -22,7 +22,7 @@ As a general rule, do not take ITAC equipment home to work on. If you think a ta
 
 ## Availability and Responsiveness
 
-While working remotely, you are expected to be reachable during core hours of **10:00 to 3:00**. You do not need to be at your desk every minute of that window, but messages should be answered within a reasonable amount of time and you should be available for impromptu calls.
+While working remotely, you are expected to be reachable during core hours of **9:00 to 3:00**. You do not need to be at your desk every minute of that window, but messages should be answered within a reasonable amount of time and you should be available for impromptu calls.
 
 You are expected to attend every scheduled meeting, remote or otherwise. Joining late, joining without video, or going silent during a meeting you are supposed to be participating in are all noticed.
 
