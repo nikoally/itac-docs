@@ -22,11 +22,7 @@ Utilize information from the company's website and other publicly available sour
 The section must include an aerial image of the facility (typically sourced from Google Earth if no other photo is available). Reference it naturally within the text using a phrase such as *"shown in the aerial view in Figure 1"* or *"as seen below in Figure 1"*.
 
 
-The final sentence of the section is auto-generated from report variables and will read:
-
-     This on-site assessment was conducted on [date], led by ITAC director, Dr. Liang Zhang. ITAC Students who participated in the assessment include [student names].*
-
-You do not write this sentence manually. It is produced by filling in the variables in Report-Variables.tex
+The final sentence of the section is auto-generated from report variables. You do not write this sentence manually. It is produced by filling in the variables in Report-Variables.tex. 
 
 ## Tips for writing the paragraphs
 
