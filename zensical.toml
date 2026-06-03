@@ -90,6 +90,12 @@ nav = [
             ]},
         {"Miscellaneous" = [
             "Recommendations/Miscellaneous/cool-roof.md",
+            "Recommendations/Miscellaneous/electric-forklift.md",
+            "Recommendations/Miscellaneous/insulate-pipes.md",
+            ]},
+        {"Smart Manufacturing" = [
+            "Recommendations/Smart Manufacturing/labor-reallocation-automation.md",
+            "Recommendations/Smart Manufacturing/lean-manufacturing-throughput.md",
             ]},
     ]},
 
@@ -161,18 +167,30 @@ nav = [
     ]},
 
     {"Student Handbook" = [
-        "handbook/getting-started.md", 
-        "handbook/assessment-day.md",
-        "handbook/apparel.md",
-        "handbook/ipad.md",
-        {"Getting Paid" = [
-            "handbook/entering-hours.md", 
-            "handbook/mileage-reimbursement.md", 
+        {"Onboarding" = [
+            "handbook/getting-started.md",
+            "handbook/required-trainings.md",
+            "handbook/apparel.md",
+            "handbook/ipad.md",
             ]},
-
+        {"Expectations" = [
+            "handbook/code-of-conduct.md",
+            "handbook/attendance.md",
+            "handbook/dress-code.md",
+            "handbook/remote-work.md",
+            "handbook/client-confidentiality.md",
+            "handbook/reporting-integrity.md",
+            ]},
+        {"Onsite Assessments" = [
+            "handbook/safety-expectations.md",
+            ]},
+        {"Getting Paid" = [
+            "handbook/entering-hours.md",
+            "handbook/mileage-reimbursement.md",
+            ]},
         {"Advancement" = [
-            "handbook/promotion.md", 
-            "handbook/certificate.md", 
+            "handbook/promotion.md",
+            "handbook/certificate.md",
             ]},
     ]},
 ]
