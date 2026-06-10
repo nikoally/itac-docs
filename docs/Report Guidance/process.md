@@ -19,7 +19,8 @@ Draw information from the pre-assessment meeting, the on-site walkthrough, docum
 
 ## Creating the Figures in PowerPoint
 
-Both figures are created in PowerPoint. Open the PowerPoint presentation in the Teams folder for the assessment, then open it in the desktop application rather than the web version. The web version does not allow you to change the color of the SmartArt. Create a new slide for each figure.
+Create both figures in PowerPoint. Open a PowerPoint presentation in the Teams folder for the assesment and add a new slide for each figure. You can find visual examples in the "Report Figure Template" within the Teams Templates folder.
+
 
 !!! warning "Key Rules to Follow" 
     - All text must be 11 pt Times New Roman.
@@ -40,8 +41,6 @@ The facility layout gives the reader a spatial sense of how the plant is organiz
 
 2. Draw labeled boxes over the image, each covering a distinct zone or area of the building (i.e. the production floor, warehouse, or office).
 
-3. Use the same color sequence as the process diagram above, from largest to smallest area.
-
-4. Label each box with a short and specific name for the area. Use the client's terminology when possible. 
+3. Label each box with a short and specific name for the area. Use the client's terminology when possible. 
 
 If a facility map or floor plan is available from the client, use it in place of the aerial photo. The figure below shows an example of what the facility layout should look like.
