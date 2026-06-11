@@ -22,12 +22,17 @@ $$
 \Delta kWh_{\text{lighting}} = \frac{(W_{\text{baseline}} - W_{\text{proposed}}) \times H \times N}{1000}
 $$
 
-Where:
+where:
 
-- $W_{\text{baseline}}$ = Wattage of existing fixture (watts)
-- $W_{\text{proposed}}$ = Wattage of proposed efficient fixture (watts)
-- $H$ = Annual operating hours (hours/year). Use 5,793 hours/year if facility-specific operating hours cannot be determined.
-- $N$ = Number of fixtures being replaced
+- $\Delta kWh_{\text{lighting}}$ = annual energy savings (kWh/yr)
+
+- $W_{\text{baseline}}$ = wattage of existing fixture (W)
+
+- $W_{\text{proposed}}$ = wattage of proposed efficient fixture (W)
+
+- $H$ = annual operating hours (hrs/yr); use 5,793 hrs/yr if facility-specific operating hours cannot be determined
+
+- $N$ = number of fixtures being replaced
 
 ### Peak Demand Savings
 

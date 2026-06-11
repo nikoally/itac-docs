@@ -27,10 +27,12 @@ $$
 A = \pi \times D_o \times L
 $$
 
-Where:
+where:
 
 - $A$ = outer surface area of the pipe (ft²)
+
 - $D_o$ = outer diameter of the pipe (ft)
+
 - $L$ = length of the pipe run (ft)
 
 Sum the surface area across all pipe runs of the same nominal size and operating temperature. Pipes with meaningfully different diameters, temperatures, or insulation thicknesses should be grouped and calculated separately. Similar pipes should be grouped for sanity while calculating. Typically, you'll want to have one "Loss" in MEASUR per area of pipes, unless the diameters of the pipes in that area vary by 50% or more or they're in different orientations. In that case, break it up further by diameter/orientation. 
@@ -44,13 +46,18 @@ $$
 T_{\text{surface}} = \frac{T_{\text{pipe}} + \left(\frac{h \cdot x}{k}\right) T_{\text{amb}}}{1 + \frac{h \cdot x}{k}}
 $$
 
-Where:
+where:
 
 - $T_{\text{surface}}$ = outer surface temperature of insulation (°F)
+
 - $T_{\text{pipe}}$ = pipe operating temperature (°F)
+
 - $T_{\text{amb}}$ = ambient air temperature (°F)
+
 - $h$ = convective heat transfer coefficient of air (≈ 1.0 Btu/hr·ft²·°F for still air)
+
 - $x$ = insulation thickness (ft)
+
 - $k$ = thermal conductivity of insulation (Btu·ft / hr·ft²·°F)
 
 Select an insulation thickness (typically 1–3 inches for pipes up to 6 in NPS) and a material from the table below.
@@ -100,11 +107,14 @@ $$
 \Delta \text{MMBtu} = (\dot{q}_{\text{bare}} - \dot{q}_{\text{insulated}}) \times H_{\text{op}}
 $$
 
-Where:
+where:
 
 - $\Delta \text{MMBtu}$ = annual fuel savings (MMBtu/yr)
+
 - $\dot{q}_{\text{bare}}$ = bare pipe heat loss rate from MEASUR (MMBtu/hr)
+
 - $\dot{q}_{\text{insulated}}$ = insulated pipe heat loss rate from MEASUR (MMBtu/hr)
+
 - $H_{\text{op}}$ = annual hours pipe is at operating temperature (hrs/yr)
 
 MEASUR calculates this directly when operating hours and fuel cost are entered; copy the reported annual savings value.

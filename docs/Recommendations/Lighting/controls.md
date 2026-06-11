@@ -33,15 +33,20 @@ Control types achieve different savings levels based on their capabilities. Use 
 Annual energy savings from the controls are:
 
 $$
-\Delta kWh_{\text{ctrl}} = \frac{W_{\text{ctrl}} \times H_{\text{pre}} \times (SF_{\text{EE}} - SF_{\text{base}})}{1000}
+\Delta kWh_{\text{ctrl}} = \frac{W_{\text{ctrl}} \times H_{\text{pre}} \times (\text{SF}_{\text{EE}} - \text{SF}_{\text{base}})}{1000}
 $$
 
-Where:
+where:
 
-- $W_{\text{ctrl}}$ = Controlled lighting load (watts)
-- $H_{\text{pre}}$ = Annual operating hours before controls installed (hours/year). Use 5,793 hours/year if facility-specific operating hours cannot be determined.
-- $SF_{\text{EE}}$ = Savings factor for installed control type (from table above)
-- $SF_{\text{base}}$ = Savings factor for baseline condition (0.0 for no controls)
+- $\Delta kWh_{\text{ctrl}}$ = annual energy savings (kWh/yr)
+
+- $W_{\text{ctrl}}$ = controlled lighting load (W)
+
+- $H_{\text{pre}}$ = annual operating hours before controls installed (hrs/yr); use 5,793 hrs/yr if facility-specific operating hours cannot be determined
+
+- $\text{SF}_{\text{EE}}$ = savings factor for installed control type (from table above)
+
+- $\text{SF}_{\text{base}}$ = savings factor for baseline condition (0.0 for no controls)
 
 
 
@@ -50,18 +55,18 @@ Where:
 Summer peak demand savings:
 
 $$
-\Delta kW_{\text{summer}} = \frac{W_{\text{ctrl}} \times (SF_{\text{EE}} - SF_{\text{base}}) \times CF_{OS}}{1000}
+\Delta kW_{\text{summer}} = \frac{W_{\text{ctrl}} \times (\text{SF}_{\text{EE}} - \text{SF}_{\text{base}}) \times \text{CF}_{\text{OS}}}{1000}
 $$
 
 Winter peak demand savings:
 
 $$
-\Delta kW_{\text{winter}} = \frac{W_{\text{ctrl}} \times (SF_{\text{EE}} - SF_{\text{base}}) \times CF_{OS}}{1000}
+\Delta kW_{\text{winter}} = \frac{W_{\text{ctrl}} \times (\text{SF}_{\text{EE}} - \text{SF}_{\text{base}}) \times \text{CF}_{\text{OS}}}{1000}
 $$
 
-Where:
+where:
 
-- $CF_{OS}$ = Occupancy sensor coincidence factor (19.8% for summer, 17.2% for winter)
+- $\text{CF}_{\text{OS}}$ = occupancy sensor coincidence factor (19.8% for summer, 17.2% for winter)
 
 !!! warning "Summer and Winter Period Definitions"
 

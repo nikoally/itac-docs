@@ -86,23 +86,43 @@ This explicit equation makes the 3/9 month split self-documenting; no admonition
 |---|---|
 | Annual energy savings | `\Delta kWh` (with descriptive subscript if needed) |
 | Peak demand reduction | `\Delta kW_{\text{summer}}`, `\Delta kW_{\text{winter}}` |
-| Annual demand savings | `\Delta kW\text{-months}` |
+| Annual demand savings | `\Delta kW\text{-months}` (always plural, this exact form) |
+| Consumption (energy) rate | `R_c` ($/kWh) |
+| Demand rate | `R_d` ($/kW-month) |
+| Efficiency | `\eta` (with subscript, e.g. `\eta_{\text{baseline}}`) |
 
 - Never use `\Delta E`, `\Delta Q`, `E_{\text{savings}}`, or `P_{\text{savings}}` for energy/demand savings.
-- Subscript words always use `\text{}`: `_{\text{summer}}`, `_{\text{loaded}}`, `_{\text{repaired}}`.
-- Unit abbreviations in variable identifiers (kWh, kW) are left unformatted — do not wrap them in `\text{}`.
+- **Multi-letter identifiers are always wrapped in `\text{}`** so they render as one upright token, not a string of multiplied italic letters. Write `\text{PPA}`, `\text{SF}`, `\text{DF}`, `\text{EER}`, `\text{EFLH}`, `\text{COP}`, `\text{CF}`, `\text{PF}`, `\text{CAP}` — never bare `PPA`, `SF`, etc. Single-letter symbols ($H$, $N$, $A$, $F$, $k$, $h$) stay italic.
+- Efficiencies use `\eta` (not `Eff`, `E`, or a spelled-out word).
+- Rates use a capital `R` with a descriptive subscript: `R_c` (consumption), `R_d` (demand), `R_{\text{labor}}`. Do not use `r_e`/`r_d` or spelled-out `\text{Electricity Cost}`.
+- Subscript words are always lowercase and wrapped in `\text{}`: `_{\text{summer}}`, `_{\text{loaded}}`, `_{\text{baseline}}`, `_{\text{prod}}` — never `_{\text{Summer}}` or `_{\text{Prod}}`.
+- Unit abbreviations in variable identifiers (kWh, kW) are left unformatted — do not wrap them in `\text{}`. Multi-letter units that read poorly in italics (MMBtu, gal) may be wrapped in `\text{}` (e.g. `\Delta \text{MMBtu}`, `\text{gal}_{\text{propane}}`).
+
+### Cost Savings Equation
+
+The dollar conversion is the final step. When shown as an equation, use the standard rate symbols:
+
+$$
+\text{Annual Savings} = (\Delta kWh \times R_c) + (\Delta kW\text{-months} \times R_d)
+$$
 
 ### Where-Lists
 
-After every equation, list variables in a bullet list. Always include parenthetical units at the end of each line:
+After every equation, introduce the variable list with a lowercase `where:` lead-in, then a bullet list. Put a **blank line between each bullet** (Zensical requires this to render the list correctly). Descriptions start lowercase and always end with parenthetical units:
 
 ```
+where:
+
 - $\Delta kWh$ = annual energy savings (kWh/yr)
+
 - $H$ = annual operating hours (hrs/yr)
+
 - $\Delta kW_{\text{summer}}$ = summer peak demand reduction (kW)
 ```
 
-Use consistent abbreviations throughout: `kWh/yr`, `kW`, `kW-months`, `hrs/yr`, `$/yr`.
+For a single variable, an inline `where $X$ is ...` sentence is fine instead of a list.
+
+Use consistent abbreviations throughout: `kWh/yr`, `kW`, `kW-months`, `hrs/yr`, `gal/yr`, `units/hr`, `$/yr`.
 
 ### Admonitions
 

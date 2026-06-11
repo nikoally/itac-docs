@@ -38,10 +38,11 @@ $$
 \Delta kWh_{\text{cool}} = A_{\text{roof}} \times 0.08145
 $$
 
-Where:
+where:
 
-- $A_{\text{roof}}$ = Roof area (ft²)
-- Savings factors are in kWh/ft²/year
+- $A_{\text{roof}}$ = roof area (sq. ft.)
+
+- savings factors are in kWh/sq. ft./yr
 
 ### Heating Penalty
 
@@ -56,10 +57,11 @@ $$
 \Delta \text{MMBtu}_{\text{heating}} = -A_{\text{roof}} \times 0.001713
 $$
 
-Where:
+where:
 
-- $\Delta \text{MMBtu}_{\text{heating}}$ = Annual increase in gas consumption (MMBtu/year). Note the negative sign indicates increased consumption.
-- The heating penalty factor is -0.001713 MMBtu/ft²/year
+- $\Delta \text{MMBtu}_{\text{heating}}$ = annual increase in gas consumption (MMBtu/yr); the negative sign indicates increased consumption
+
+- the heating penalty factor is -0.001713 MMBtu/sq. ft./yr
 
 #### Electric Heating Penalty
 
@@ -69,11 +71,13 @@ $$
 \Delta kWh_{\text{heating}} = \Delta \text{CCF}_{\text{heating}} \times \frac{103,700 \text{ Btu/CCF}}{3,412 \text{ Btu/kWh} \times \eta_{\text{elec}}}
 $$
 
-Where:
+where:
 
-- $\eta_{\text{elec}}$ = Electric heating system efficiency (use 1.0 for resistance heat, use COP value for heat pumps, typically 2.5-3.5)
-- 103,700 Btu/CCF = Energy content of natural gas
-- 3,412 Btu/kWh = Conversion factor
+- $\eta_{\text{elec}}$ = electric heating system efficiency (use 1.0 for resistance heat, use COP value for heat pumps, typically 2.5-3.5)
+
+- 103,700 Btu/CCF = energy content of natural gas
+
+- 3,412 Btu/kWh = conversion factor
 
 ### Summer Peak Demand Savings
 
@@ -98,12 +102,13 @@ Winter peak demand savings are zero as cool roofs do not significantly affect lo
 Annual demand savings in kW-month are calculated using only the summer peak savings:
 
 $$
-\Delta kW\text{-month} = \Delta kW_{\text{summer}} \times CF_{\text{summer}} \times 3
+\Delta kW\text{-months} = \Delta kW_{\text{summer}} \times \text{CF}_{\text{summer}} \times 3
 $$
 
-Where:
+where:
 
-- $CF_{\text{summer}}$ = Summer coincidence factor (0.83 for manufacturing facilities)
+- $\text{CF}_{\text{summer}}$ = summer coincidence factor (0.83 for manufacturing facilities)
+
 - 3 = number of summer months
 
 !!! warning "Climate Suitability and Heating Penalty"

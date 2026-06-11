@@ -58,13 +58,17 @@ Energy savings from compressed air leak repair result from reduced compressor ru
 Annual energy savings are calculated as:
 
 $$
-\Delta E = \frac{Q_{\text{repaired}} \times H \times P_{\text{specific}}}{100}
+\Delta kWh = \frac{Q_{\text{repaired}} \times H \times P_{\text{specific}}}{100}
 $$
 
-Where:
+where:
+
+- $\Delta kWh$ = annual energy savings (kWh/yr)
 
 - $Q_{\text{repaired}}$ = leak rate repaired (CFM), typically 50-80% of identified leak rate
-- $H$ = annual compressor operating hours (hours/year)
+
+- $H$ = annual compressor operating hours (hrs/yr)
+
 - $P_{\text{specific}}$ = specific power of compressed air system (kW per 100 CFM)
 
 Specific power depends on compressor type and operating efficiency. For VFD compressors, calculate from the CAGI datasheet power-flow curve in the operating region. For non-VFD compressors, calculate from loaded state values:
@@ -96,11 +100,14 @@ $$
 \Delta kW\text{-months} = (\Delta kW_{\text{summer}} \times 3) + (\Delta kW_{\text{winter}} \times 9)
 $$
 
-Where:
+where:
 
 - $\Delta kW_{\text{summer}}$ = summer peak demand reduction with 94.7% coincidence factor
+
 - $\Delta kW_{\text{winter}}$ = winter peak demand reduction with 74.3% coincidence factor
+
 - 3 = number of summer months
+
 - 9 = number of winter months
 
 !!! note "Coincidence Factors"

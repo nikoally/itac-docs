@@ -21,28 +21,35 @@ Savings come from avoided propane consumption. This is offset by the net electri
 ### Annual Propane Savings
 
 $$
-\Delta PG = Gal_{\text{Propane}}
+\Delta \text{gal}_{\text{propane}} = \text{gal}_{\text{propane}}
 $$
 
-Where:
+where:
 
-- $\Delta PG$ = annual propane savings (gallons/year)
-- $Gal_{\text{Propane}}$ = annual propane consumption of the baseline forklift (gallons/year), default 1,500 gallons
+- $\Delta \text{gal}_{\text{propane}}$ = annual propane savings (gal/yr)
+
+- $\text{gal}_{\text{propane}}$ = annual propane consumption of the baseline forklift (gal/yr), default 1,500 gal
 
 ### Annual Electric Energy Impact
 
 The electric forklift increases site electricity consumption. The annual electric energy impact is calculated as:
 
 $$
-\Delta kWh = \frac{Gal_{\text{Propane}} \times C_{\text{Propane}} \times Eff_{\text{b}}}{Eff_{\text{Charger}} \times C_{\text{kWh}}}
+\Delta kWh = \frac{\text{gal}_{\text{propane}} \times C_{\text{propane}} \times \eta_{\text{baseline}}}{\eta_{\text{charger}} \times C_{\text{kWh}}}
 $$
 
-Where:
+where:
 
-- $Gal_{\text{Propane}}$ = annual propane consumption of the baseline forklift (gallons/year), default 1,500
-- $C_{\text{Propane}}$ = propane energy content, 91,330 Btu/gallon
-- $Eff_{\text{b}}$ = baseline propane engine efficiency, 0.30
-- $Eff_{\text{Charger}}$ = average charger efficiency for the electric forklift, 0.87
+- $\Delta kWh$ = annual increase in electricity consumption (kWh/yr)
+
+- $\text{gal}_{\text{propane}}$ = annual propane consumption of the baseline forklift (gal/yr), default 1,500
+
+- $C_{\text{propane}}$ = propane energy content, 91,330 Btu/gal
+
+- $\eta_{\text{baseline}}$ = baseline propane engine efficiency, 0.30
+
+- $\eta_{\text{charger}}$ = average charger efficiency for the electric forklift, 0.87
+
 - $C_{\text{kWh}}$ = electric conversion constant, 3,412 Btu/kWh
 
 Using default values, the annual electric energy increase is approximately 13,845 kWh/year.
@@ -59,10 +66,10 @@ Because the electric forklift charges overnight, there is no coincident summer o
 
 | Variable | Description | Default Value | Units |
 |---|---|---|---|
-| $Gal_{\text{Propane}}$ | Annual propane consumption of baseline forklift | 1,500 | gallons/year |
-| $Eff_{\text{b}}$ | Baseline propane engine efficiency | 0.30 | -- |
-| $Eff_{\text{Charger}}$ | Average electric charger efficiency | 0.87 | -- |
-| $C_{\text{Propane}}$ | Propane energy content | 91,330 | Btu/gallon |
+| $\text{gal}_{\text{propane}}$ | Annual propane consumption of baseline forklift | 1,500 | gallons/year |
+| $\eta_{\text{baseline}}$ | Baseline propane engine efficiency | 0.30 | -- |
+| $\eta_{\text{charger}}$ | Average electric charger efficiency | 0.87 | -- |
+| $C_{\text{propane}}$ | Propane energy content | 91,330 | Btu/gallon |
 | $C_{\text{kWh}}$ | Electric conversion constant | 3,412 | Btu/kWh |
 | Hours | Annual operating/charging hours | 1,500 | hours/year |
 

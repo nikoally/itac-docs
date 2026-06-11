@@ -22,7 +22,17 @@ Access the energy rate board for your state:
 
 Savings for this recommendation are calculated as follows:
 
-$$\text{Savings} = \text{kWh Usage} \times (\text{Current Rate} - \text{New Rate})$$
+$$
+\text{Savings} = \text{kWh} \times (R_{\text{current}} - R_{\text{new}})
+$$
+
+where:
+
+- $\text{kWh}$ = monthly electricity usage (kWh)
+
+- $R_{\text{current}}$ = current supply rate (\$/kWh)
+
+- $R_{\text{new}}$ = new supply rate (\$/kWh)
 
 Although savings are reported as an annual figure, this calculation should be performed for each individual month and then summed to obtain the total yearly savings.
 

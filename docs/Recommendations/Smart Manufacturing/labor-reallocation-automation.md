@@ -30,9 +30,10 @@ $$
 \text{Annual Savings} = R_{\text{labor}} \times H_{\text{station}}
 $$
 
-Where:
+where:
 
 - $R_{\text{labor}}$ = fully burdened labor rate including fringe benefits ($/hr)
+
 - $H_{\text{station}}$ = annual operator hours at the manual station (hrs/yr)
 
 The fully burdened rate should include base wages, health insurance, retirement contributions, payroll taxes, and other fringe benefits. If the facility does not provide a burdened rate, apply a fringe multiplier of 1.3–1.4 to the base hourly wage.

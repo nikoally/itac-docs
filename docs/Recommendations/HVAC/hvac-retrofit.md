@@ -5,26 +5,16 @@ hide:
 
 # Rooftop Unit (RTU) Retrofits
 
-**ARC Code(s):** 2.7232 - Replace existing HVAC unit with high efficiency model
+Retrofitting rooftop units (RTUs) with higher-efficiency equipment significantly reduces cooling energy consumption, especially in older packaged systems operating without advanced controls. The analysis compares the baseline and installed efficiency metrics over the equipment's annual cooling run time, using the number of units, rated cooling capacity, and the facility's cooling degree days (from its ZIP code).
 
-## Overview
+**ARC Code(s):** 2.7232
 
-This measure involves retrofitting rooftop units (RTUs) with higher efficiency equipment. These upgrades significantly reduce cooling energy consumption, especially in older packaged systems operating without advanced controls.
-
-## Required Information
-
-- Number of RTUs
-- Rated cooling capacity (Btu/hr or tons)
-- Baseline and installed EER values
-- ZIP code (for CDD)
-- Electricity cost ($/kWh)
-
-## Calculation Methodology
+## Savings Calculation
 
 The baseline EER from the original equipment can be calculated from the product data. This is found either on the nameplate or by searching online. Due to yearly degradation, a 1% compounding decrease in efficiency per year from the date of manufacturing is assumed.
 
 $$
-\text{EER}_b = \text{EER}_{\text{true}} \times (0.99)^{\text{Years}}
+\text{EER}_{\text{baseline}} = \text{EER}_{\text{true}} \times (0.99)^{\text{years}}
 $$
 
 This same formula applies to IEER and SEER.
@@ -32,10 +22,10 @@ This same formula applies to IEER and SEER.
 !!! note
     When selecting an efficiency metric, prefer SEER2 first, then SEER, then EER based on availability. The same metric must be used for both the baseline and installed unit — do not mix and match.
 
-**Effective full-load hours:**
+Effective full-load hours translate climate data into equivalent full-capacity run time:
 
 $$
-\text{EFLH}_{\text{Cooling}} = \frac{\text{CDD} \times 24}{T_{\text{design,cool}} - 65}
+\text{EFLH}_{\text{cool}} = \frac{\text{CDD} \times 24}{T_{\text{design,cool}} - 65}
 $$
 
 where $T_{\text{design,cool}}$ is the ASHRAE 1% cooling design dry-bulb temperature (°F) for the facility's location.
@@ -43,23 +33,39 @@ where $T_{\text{design,cool}}$ is the ASHRAE 1% cooling design dry-bulb temperat
 !!! note
     Effective full-load hours (EFLH) accounts for the fact that HVAC equipment rarely operates at full capacity. The calculation uses climate data (cooling degree days) along with design temperatures to determine equivalent full-load operating hours.
 
-**Energy Savings:**
+### Annual Energy Savings
 
 $$
-\Delta \text{kWh}_C = \text{CAP}_C \times \left(\frac{1}{\text{EER}_b} - \frac{1}{\text{EER}_i}\right) \times \frac{1}{1000} \times \text{EFLH}_C
+\Delta kWh_{\text{cool}} = \text{CAP}_{\text{cool}} \times \left(\frac{1}{\text{EER}_{\text{baseline}}} - \frac{1}{\text{EER}_{\text{installed}}}\right) \times \frac{1}{1000} \times \text{EFLH}_{\text{cool}}
 $$
 
-**Peak Demand Savings:**
+where:
+
+- $\Delta kWh_{\text{cool}}$ = annual cooling energy savings (kWh/yr)
+
+- $\text{CAP}_{\text{cool}}$ = rated cooling capacity (Btu/hr)
+
+- $\text{EER}_{\text{baseline}}$ = degraded baseline efficiency (Btu/Wh)
+
+- $\text{EER}_{\text{installed}}$ = installed unit efficiency (Btu/Wh)
+
+- $\text{EFLH}_{\text{cool}}$ = effective full-load cooling hours (hrs/yr)
+
+### Peak Demand Savings
 
 $$
-\Delta \text{kW}_{\text{Summer}} = \frac{\Delta \text{kWh}_C}{\text{EFLH}_C} \times 0.42
+\Delta kW_{\text{summer}} = \frac{\Delta kWh_{\text{cool}}}{\text{EFLH}_{\text{cool}}} \times 0.42
 $$
 
-**Cost Savings:**
+where $0.42$ is the summer demand coincidence factor for cooling equipment.
+
+### Annual Cost Savings
 
 $$
-\text{Annual Savings (\$)} = \Delta \text{kWh}_C \times \text{Electricity Cost}
+\text{Annual Savings} = \Delta kWh_{\text{cool}} \times R_c
 $$
+
+where $R_c$ is the facility consumption rate (\$/kWh).
 
 ## Anticipated Costs
 

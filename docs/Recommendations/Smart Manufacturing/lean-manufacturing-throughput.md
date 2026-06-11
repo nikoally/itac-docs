@@ -15,9 +15,9 @@ Facility electricity consumption can be decomposed into three load categories:
 
 | Load Type | Symbol | Description | Dependence Factor |
 |---|---|---|---|
-| Independent (Type A, B, Office) | $DF_{\text{Ind}}$ | Loads independent of production hours and throughput (lighting, office equipment) | 0.45 |
-| Hours-dependent (Type C) | $DF_{\text{Hrs}}$ | Loads that scale with production hours (compressed air, ventilation) | 0.38 |
-| Production-dependent (Type D) | $DF_{\text{Prod}}$ | Loads that scale with production throughput (motor drives, process equipment) | 0.17 |
+| Independent (Type A, B, Office) | $\text{DF}_{\text{ind}}$ | Loads independent of production hours and throughput (lighting, office equipment) | 0.45 |
+| Hours-dependent (Type C) | $\text{DF}_{\text{hrs}}$ | Loads that scale with production hours (compressed air, ventilation) | 0.38 |
+| Production-dependent (Type D) | $\text{DF}_{\text{prod}}$ | Loads that scale with production throughput (motor drives, process equipment) | 0.17 |
 
 When throughput increases through PRIME, independent loads remain constant, hours-dependent loads remain constant (same hours, more output), and production-dependent loads increase less than proportionally due to efficiency gains at higher utilization. The net effect is lower energy consumption per unit of output.
 
@@ -31,100 +31,110 @@ When throughput increases through PRIME, independent loads remain constant, hour
 Annual gross energy savings equal the difference between estimated consumption if the facility scaled production without PRIME and estimated consumption with PRIME improvements in place:
 
 $$
-\Delta kWh = kWh_{\text{Est,wop}} - kWh_{\text{Est,wp}}
+\Delta kWh = kWh_{\text{est,wop}} - kWh_{\text{est,wp}}
 $$
 
-Where:
+where:
 
-- $kWh_{\text{Est,wop}}$ = estimated annual consumption with increased productivity **without** PRIME (kWh)
-- $kWh_{\text{Est,wp}}$ = estimated annual consumption with increased productivity **with** PRIME (kWh)
+- $\Delta kWh$ = annual energy savings (kWh/yr)
+
+- $kWh_{\text{est,wop}}$ = estimated annual consumption with increased productivity **without** PRIME (kWh/yr)
+
+- $kWh_{\text{est,wp}}$ = estimated annual consumption with increased productivity **with** PRIME (kWh/yr)
 
 **Estimated consumption without PRIME** — each component scales with the production increase ratio $N_a / N_e$:
 
 $$
-kWh_{\text{Est,wop}} = kWh_{\text{Ind,wop}} + kWh_{\text{Hrs,wop}} + kWh_{\text{Prod,wop}}
+kWh_{\text{est,wop}} = kWh_{\text{ind,wop}} + kWh_{\text{hrs,wop}} + kWh_{\text{prod,wop}}
 $$
 
 $$
-kWh_{\text{Ind,wop}} = DF_{\text{Ind}} \times PPA \times kWh_{\text{Hist}}
+kWh_{\text{ind,wop}} = \text{DF}_{\text{ind}} \times \text{PPA} \times kWh_{\text{hist}}
 $$
 
 $$
-kWh_{\text{Hrs,wop}} = DF_{\text{Hrs}} \times PPA \times kWh_{\text{Hist}} \times \frac{N_a}{N_e}
+kWh_{\text{hrs,wop}} = \text{DF}_{\text{hrs}} \times \text{PPA} \times kWh_{\text{hist}} \times \frac{N_a}{N_e}
 $$
 
 $$
-kWh_{\text{Prod,wop}} = DF_{\text{Prod}} \times PPA \times kWh_{\text{Hist}} \times \frac{N_a}{N_e}
+kWh_{\text{prod,wop}} = \text{DF}_{\text{prod}} \times \text{PPA} \times kWh_{\text{hist}} \times \frac{N_a}{N_e}
 $$
 
-**Estimated consumption with PRIME** — independent loads are unchanged, hours-dependent loads return to baseline because PRIME achieves the same output in the same hours, and production-dependent loads increase with throughput but are partially offset by a savings factor $SF$:
+**Estimated consumption with PRIME** — independent loads are unchanged, hours-dependent loads return to baseline because PRIME achieves the same output in the same hours, and production-dependent loads increase with throughput but are partially offset by a savings factor $\text{SF}$:
 
 $$
-kWh_{\text{Est,wp}} = kWh_{\text{Ind,wp}} + kWh_{\text{Hrs,wp}} + kWh_{\text{Prod,wp}}
-$$
-
-$$
-kWh_{\text{Ind,wp}} = DF_{\text{Ind}} \times PPA \times kWh_{\text{Hist}}
+kWh_{\text{est,wp}} = kWh_{\text{ind,wp}} + kWh_{\text{hrs,wp}} + kWh_{\text{prod,wp}}
 $$
 
 $$
-kWh_{\text{Hrs,wp}} = DF_{\text{Hrs}} \times PPA \times kWh_{\text{Hist}}
+kWh_{\text{ind,wp}} = \text{DF}_{\text{ind}} \times \text{PPA} \times kWh_{\text{hist}}
 $$
 
 $$
-kWh_{\text{Prod,wp}} = DF_{\text{Prod}} \times PPA \times \frac{N_a}{N_e} \times (1 - SF) \times kWh_{\text{Hist}}
+kWh_{\text{hrs,wp}} = \text{DF}_{\text{hrs}} \times \text{PPA} \times kWh_{\text{hist}}
 $$
 
-**Savings factor** — $SF$ represents the percent energy reduction as a function of the percent production increase, derived from a regression analysis:
-
 $$
-SF = 0.1168 \times \left(\frac{N_a - N_e}{N_e}\right)^3 - 0.3402 \times \left(\frac{N_a - N_e}{N_e}\right)^2 + 0.4732 \times \left(\frac{N_a - N_e}{N_e}\right) + 0.0011
+kWh_{\text{prod,wp}} = \text{DF}_{\text{prod}} \times \text{PPA} \times \frac{N_a}{N_e} \times (1 - \text{SF}) \times kWh_{\text{hist}}
 $$
 
-Where:
+**Savings factor** — $\text{SF}$ represents the percent energy reduction as a function of the percent production increase, derived from a regression analysis:
 
-- $kWh_{\text{Hist}}$ = facility annual electric usage from billing history (kWh)
-- $PPA$ = percent of facility energy usage affected by PRIME (decimal)
-- $DF_{\text{Ind}}$ = load dependence factor, independent loads (0.45)
-- $DF_{\text{Hrs}}$ = load dependence factor, hours-dependent loads (0.38)
-- $DF_{\text{Prod}}$ = load dependence factor, production-dependent loads (0.17)
-- $N_a$ = production rate after PRIME (units/hour)
-- $N_e$ = existing production rate before PRIME (units/hour)
-- $SF$ = savings factor (dimensionless)
+$$
+\text{SF} = 0.1168 \times \left(\frac{N_a - N_e}{N_e}\right)^3 - 0.3402 \times \left(\frac{N_a - N_e}{N_e}\right)^2 + 0.4732 \times \left(\frac{N_a - N_e}{N_e}\right) + 0.0011
+$$
+
+where:
+
+- $kWh_{\text{hist}}$ = facility annual electric usage from billing history (kWh/yr)
+
+- $\text{PPA}$ = percent of facility energy usage affected by PRIME (decimal)
+
+- $\text{DF}_{\text{ind}}$ = load dependence factor, independent loads (0.45)
+
+- $\text{DF}_{\text{hrs}}$ = load dependence factor, hours-dependent loads (0.38)
+
+- $\text{DF}_{\text{prod}}$ = load dependence factor, production-dependent loads (0.17)
+
+- $N_a$ = production rate after PRIME (units/hr)
+
+- $N_e$ = existing production rate before PRIME (units/hr)
+
+- $\text{SF}$ = savings factor (dimensionless)
 
 !!! note "Load Dependence Factors"
-    The default dependence factors ($DF_{\text{Ind}} = 0.45$, $DF_{\text{Hrs}} = 0.38$, $DF_{\text{Prod}} = 0.17$) are population averages from program evaluation data. If facility-specific metering or sub-metering data is available to refine these splits, document the rationale and use the site-specific values instead.
+    The default dependence factors ($\text{DF}_{\text{ind}} = 0.45$, $\text{DF}_{\text{hrs}} = 0.38$, $\text{DF}_{\text{prod}} = 0.17$) are population averages from program evaluation data. If facility-specific metering or sub-metering data is available to refine these splits, document the rationale and use the site-specific values instead.
 
 ### Peak Demand Savings
 
 Summer and winter peak demand savings are zero for this measure. PRIME increases throughput efficiency but does not reduce the instantaneous peak draw of operating equipment.
 
 $$
-\Delta kW_{\text{Summer}} = 0
+\Delta kW_{\text{summer}} = 0
 $$
 
 $$
-\Delta kW_{\text{Winter}} = 0
+\Delta kW_{\text{winter}} = 0
 $$
 
 ### Calculation Example
 
-A manufacturing plant consumes 1,000,000 kWh/yr ($kWh_{\text{Hist}}$). PRIME is applied to production lines representing 25% ($PPA = 0.25$) of facility energy. Production increases from 300 ($N_e$) to 330 ($N_a$) units per hour.
+A manufacturing plant consumes 1,000,000 kWh/yr ($kWh_{\text{hist}}$). PRIME is applied to production lines representing 25% ($\text{PPA} = 0.25$) of facility energy. Production increases from 300 ($N_e$) to 330 ($N_a$) units per hour.
 
 **Without PRIME:**
 
-- $kWh_{\text{Ind,wop}} = 0.45 \times 0.25 \times 1{,}000{,}000 = 112{,}500$ kWh
-- $kWh_{\text{Hrs,wop}} = 0.38 \times 0.25 \times 1{,}000{,}000 \times \frac{330}{300} = 104{,}500$ kWh
-- $kWh_{\text{Prod,wop}} = 0.17 \times 0.25 \times 1{,}000{,}000 \times \frac{330}{300} = 46{,}750$ kWh
-- $kWh_{\text{Est,wop}} = 112{,}500 + 104{,}500 + 46{,}750 = 263{,}750$ kWh
+- $kWh_{\text{ind,wop}} = 0.45 \times 0.25 \times 1{,}000{,}000 = 112{,}500$ kWh
+- $kWh_{\text{hrs,wop}} = 0.38 \times 0.25 \times 1{,}000{,}000 \times \frac{330}{300} = 104{,}500$ kWh
+- $kWh_{\text{prod,wop}} = 0.17 \times 0.25 \times 1{,}000{,}000 \times \frac{330}{300} = 46{,}750$ kWh
+- $kWh_{\text{est,wop}} = 112{,}500 + 104{,}500 + 46{,}750 = 263{,}750$ kWh
 
 **With PRIME:**
 
-- $kWh_{\text{Ind,wp}} = 112{,}500$ kWh
-- $kWh_{\text{Hrs,wp}} = 0.38 \times 0.25 \times 1{,}000{,}000 = 95{,}000$ kWh
-- $SF = 0.1168 \times (0.1)^3 - 0.3402 \times (0.1)^2 + 0.4732 \times (0.1) + 0.0011 = 0.045$
-- $kWh_{\text{Prod,wp}} = 0.17 \times 0.25 \times 1{,}000{,}000 \times \frac{330}{300} \times (1 - 0.045) = 44{,}646$ kWh
-- $kWh_{\text{Est,wp}} = 112{,}500 + 95{,}000 + 44{,}646 = 252{,}146$ kWh
+- $kWh_{\text{ind,wp}} = 112{,}500$ kWh
+- $kWh_{\text{hrs,wp}} = 0.38 \times 0.25 \times 1{,}000{,}000 = 95{,}000$ kWh
+- $\text{SF} = 0.1168 \times (0.1)^3 - 0.3402 \times (0.1)^2 + 0.4732 \times (0.1) + 0.0011 = 0.045$
+- $kWh_{\text{prod,wp}} = 0.17 \times 0.25 \times 1{,}000{,}000 \times \frac{330}{300} \times (1 - 0.045) = 44{,}646$ kWh
+- $kWh_{\text{est,wp}} = 112{,}500 + 95{,}000 + 44{,}646 = 252{,}146$ kWh
 
 **Savings:**
 
@@ -152,6 +162,6 @@ In addition to the [typical report requirements](../how-to.md), the recommendati
 
 - **Existing production rate** ($N_e$) — units per hour before PRIME, with basis for the value (production logs, operator interviews, or time studies)
 - **Proposed production rate** ($N_a$) — units per hour after PRIME, with supporting justification for the expected improvement
-- **Percent of production affected** ($PPA$) — the fraction of total facility energy represented by the lines undergoing PRIME
-- **Historical energy consumption** ($kWh_{\text{Hist}}$) — from at least 12 months of utility billing data
+- **Percent of production affected** ($\text{PPA}$) — the fraction of total facility energy represented by the lines undergoing PRIME
+- **Historical energy consumption** ($kWh_{\text{hist}}$) — from at least 12 months of utility billing data
 - **Load dependence factors used** — if deviating from default values, document the basis

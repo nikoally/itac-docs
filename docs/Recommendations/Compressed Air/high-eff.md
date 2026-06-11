@@ -30,45 +30,49 @@ MEASUR outputs annual energy consumption (kWh) and average demand (kW) for each 
 ### Energy and Demand Savings
 
 $$
-\Delta E = E_{\text{existing}} - E_{\text{proposed}}
+\Delta kWh = kWh_{\text{existing}} - kWh_{\text{proposed}}
 $$
 
 $$
 \Delta kW = kW_{\text{existing}} - kW_{\text{proposed}}
 $$
 
-Where:
+where:
 
-- $\Delta E$ = annual energy savings (kWh/yr)
-- $E_{\text{existing}}$ = annual energy consumption of existing compressor from MEASUR (kWh/yr)
-- $E_{\text{proposed}}$ = annual energy consumption of proposed compressor from MEASUR (kWh/yr)
+- $\Delta kWh$ = annual energy savings (kWh/yr)
+
+- $kWh_{\text{existing}}$ = annual energy consumption of existing compressor from MEASUR (kWh/yr)
+
+- $kWh_{\text{proposed}}$ = annual energy consumption of proposed compressor from MEASUR (kWh/yr)
+
 - $\Delta kW$ = average demand reduction (kW)
 
 Convert demand reduction to kW-months for the demand savings column:
 
 $$
-\Delta \text{kW-months} = \Delta kW \times 12
+\Delta kW\text{-months} = \Delta kW \times 12
 $$
 
 ### Annual Cost Savings
 
 $$
-\text{Annual Savings} = (\Delta E \times r_e) + (\Delta \text{kW-months} \times r_d)
+\text{Annual Savings} = (\Delta kWh \times R_c) + (\Delta kW\text{-months} \times R_d)
 $$
 
-Where:
+where:
 
-- $r_e$ = facility blended electricity rate ($/kWh)
-- $r_d$ = facility demand rate ($/kW-month)
+- $R_c$ = facility consumption rate ($/kWh)
+
+- $R_d$ = facility demand rate ($/kW-month)
 
 Report consumption and demand savings separately so the facility can update projections when rates change.
 
-### Required Assumptions
+!!! note "Assumptions"
 
-- Both models use identical compressed air demand profiles derived from facility operating data
-- Compressor input parameters are taken from manufacturer CAGI datasheets or nameplate data
-- Operating hours and load profiles reflect actual facility production schedules
-- Utility rates match the facility's current tariff structure
+    - Both models use identical compressed air demand profiles derived from facility operating data
+    - Compressor input parameters are taken from manufacturer CAGI datasheets or nameplate data
+    - Operating hours and load profiles reflect actual facility production schedules
+    - Utility rates match the facility's current tariff structure
 
 !!! warning "Model Validation"
     Verify that the MEASUR baseline model output reasonably matches the existing compressor's metered energy consumption. If the modeled baseline deviates from measured data by more than 10%, investigate input assumptions before using the model for savings projections.

@@ -20,7 +20,7 @@ The Assessment Basics tab establishes the fundamental settings for the simulatio
 
 #### Utility Rates
 
-- **Electricity Cost ($/kWh):** Pulled directly from the utility analysis spreadsheet. This is the blended rate that accounts for all relevant charges on the facility's electric bill.
+- **Electricity Cost ($/kWh):** Pulled directly from the utility analysis spreadsheet. This is the consumption rate that accounts for all relevant charges on the facility's electric bill.
 - **Demand Cost ($/kW-month):** Also from the utility analysis spreadsheet. This reflects the demand charge component of the facility's rate structure.
 
 #### Other Settings

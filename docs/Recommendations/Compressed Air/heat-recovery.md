@@ -40,7 +40,7 @@ The heat rejection fraction depends on compressor type:
 
 For air-cooled compressors, nearly all of the rejected heat warms the compressor room air. In a typical installation, the compressor room is ventilated to prevent overheating, and this warm exhaust air (typically 20 to 40 F above ambient) is vented outdoors. Redirecting this exhaust into the facility during the heating season captures the heat at no additional energy cost.
 
-## Calculation Methodology
+## Savings Calculation
 
 ### Recoverable Heat
 
@@ -62,10 +62,12 @@ $$
 Q_{\text{recoverable}} = Q_{\text{input}} \times f_{\text{rejection}}
 $$
 
-Where:
+where:
 
 - $Q_{\text{input}}$ = total heat equivalent of electrical input (Btu/hr)
+
 - $P_{\text{motor}}$ = compressor motor power (HP or kW)
+
 - $f_{\text{rejection}}$ = heat rejection factor (decimal, from table above)
 
 ### Heating Season
@@ -78,10 +80,11 @@ $$
 H_{\text{heating}} = H_{\text{annual}} \times \frac{N_{\text{heating}}}{12}
 $$
 
-Where:
+where:
 
-- $H_{\text{annual}}$ = total annual compressor operating hours
-- $N_{\text{heating}}$ = number of heating months per year
+- $H_{\text{annual}}$ = total annual compressor operating hours (hrs/yr)
+
+- $N_{\text{heating}}$ = number of heating months per year (months/yr)
 
 !!! note "Heating Season Definition"
 
@@ -101,7 +104,7 @@ $$
 \text{Energy Displaced (kWh)} = \frac{Q_{\text{recoverable}} \times H_{\text{heating}}}{3{,}412 \times \eta_{\text{heating}}}
 $$
 
-Where:
+where:
 
 - $\eta_{\text{heating}}$ = efficiency of the existing heating system (decimal)
 
@@ -133,8 +136,10 @@ $$
 $$
 
 $$
-\text{Demand Savings} = \Delta kW\text{-months} \times \text{Demand Rate}
+\text{Demand Savings} = \Delta kW\text{-months} \times R_d
 $$
+
+where $R_d$ is the facility demand rate (\$/kW-month).
 
 ## Anticipated Costs
 

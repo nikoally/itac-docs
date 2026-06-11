@@ -16,13 +16,17 @@ Savings come from reduced compressor loading once leaks are sealed. The acoustic
 ### Annual Energy Savings
 
 $$
-\Delta E = \frac{Q_{\text{leaks}} \times H \times P_{\text{specific}}}{100}
+\Delta kWh = \frac{Q_{\text{leaks}} \times H \times P_{\text{specific}}}{100}
 $$
 
-Where:
+where:
+
+- $\Delta kWh$ = annual energy savings (kWh/yr)
 
 - $Q_{\text{leaks}}$ = total leak flow rate repaired (CFM)
+
 - $H$ = annual leaking hours (hrs/yr)
+
 - $P_{\text{specific}}$ = compressor specific power (kW per 100 CFM), from CAGI datasheet loaded values
 
 ### Peak Demand Savings
@@ -30,13 +34,13 @@ Where:
 Average demand reduction follows directly from energy savings and loaded compressor hours:
 
 $$
-\Delta kW = \frac{\Delta E}{H_{\text{loaded}}}
+\Delta kW = \frac{\Delta kWh}{H_{\text{loaded}}}
 $$
 
-Where $H_{\text{loaded}}$ is annual compressor loaded operating hours (hrs/yr). Convert to kW-months for the demand savings column:
+where $H_{\text{loaded}}$ is annual compressor loaded operating hours (hrs/yr). Convert to kW-months for the demand savings column:
 
 $$
-\Delta \text{kW-months} = \Delta kW \times 12
+\Delta kW\text{-months} = \Delta kW \times 12
 $$
 
 ### Annual Cost Savings
@@ -44,13 +48,14 @@ $$
 Total annual savings include both consumption and demand charges:
 
 $$
-\text{Annual Savings} = (\Delta E \times r_e) + (\Delta \text{kW-months} \times r_d)
+\text{Annual Savings} = (\Delta kWh \times R_c) + (\Delta kW\text{-months} \times R_d)
 $$
 
-Where:
+where:
 
-- $r_e$ = facility blended electricity rate (\$/kWh)
-- $r_d$ = facility demand rate (\$/kW-month)
+- $R_c$ = facility consumption rate (\$/kWh)
+
+- $R_d$ = facility demand rate (\$/kW-month)
 
 Report consumption and demand savings separately so the facility can update projections when rates change.
 
@@ -68,7 +73,7 @@ $$
 
 **Labor:** Budget **15 minutes per leak** at the ITAC standard high-skill rate. Leaks in confined spaces or requiring rigging access will take longer. 
 $$
-C_{\text{labor}} = n_{\text{leaks}} \times 0.25 \times r_{\text{labor}}
+C_{\text{labor}} = n_{\text{leaks}} \times 0.25 \times R_{\text{labor}}
 $$
 
 **Utility incentives:** Compressed air leak repair qualifies for prescriptive or custom rebates under most utility demand-side management programs. Verify current offerings with the local utility and subtract any incentives from implementation cost before calculating payback.
