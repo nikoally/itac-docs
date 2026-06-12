@@ -43,4 +43,4 @@ The facility layout gives the reader a spatial sense of how the plant is organiz
 
 3. Label each box with a short and specific name for the area. Use the client's terminology when possible. 
 
-If a facility map or floor plan is available from the client, use it in place of the aerial photo. The figure below shows an example of what the facility layout should look like.
+If a facility map or floor plan is available from the client, use it in place of the aerial photo. 
