@@ -8,7 +8,9 @@ hide:
 
 Older lighting fixtures using incandescent, fluorescent, or high-intensity discharge (HID) lamps consume significantly more energy than modern LED fixtures to produce the same light output. Replacing inefficient fixtures with LED or other high-efficiency lighting reduces electrical consumption and maintenance costs.
 
-**ARC Code(s):** 2.7142
+**ARC Code(s):** 
+
+- 2.7142 (Utilize Higher Efficiency Lamps and/or Ballasts)
 
 ## Savings Calculation
 
@@ -19,35 +21,18 @@ Energy savings from efficient lighting fixtures result from reduced wattage to p
 Annual energy savings from replacing fixtures are:
 
 $$
-\Delta kWh_{\text{lighting}} = \frac{(W_{\text{baseline}} - W_{\text{proposed}}) \times H \times N}{1000}
+\Delta \text{kWh} = (W_{\text{baseline}} - W_{\text{proposed}}) \times H
 $$
 
 where:
 
-- $\Delta kWh_{\text{lighting}}$ = annual energy savings (kWh/yr)
+- $W_{\text{baseline}}$ = wattage of existing fixtures (kW)
 
-- $W_{\text{baseline}}$ = wattage of existing fixture (W)
+- $W_{\text{proposed}}$ = wattage of proposed efficient fixtures (kW)
 
-- $W_{\text{proposed}}$ = wattage of proposed efficient fixture (W)
+- $H$ = annual operating hours (hrs/yr)
 
-- $H$ = annual operating hours (hrs/yr); use 5,793 hrs/yr if facility-specific operating hours cannot be determined
-
-- $N$ = number of fixtures being replaced
-
-### Peak Demand Savings
-
-Peak demand savings from the lighting reduction are:
-
-$$
-\Delta kW = \frac{(W_{\text{baseline}} - W_{\text{proposed}}) \times N}{1000}
-$$
-
-Important assumptions to state in the analysis:
-
-- Lighting operating hours should be facility-specific where possible; use 5,793 hours/year if measured data unavailable
-- Baseline and proposed fixture wattages should include ballast/driver losses
-- Light output (lumens) of proposed fixtures should meet or exceed baseline fixtures
-- Verify that proposed fixtures are compatible with existing controls and mounting hardware
+$W_{\text{baseline}}$ should include only the facility's fixtures that are relevant to the recommendation. While you do not need to "show your work" in terms of the arithmetic that supports this figure, you must clearly explain which zones of lighting from the major consumers section are relevant to this recommendation. 
 
 ??? note "Replacing Ballast-Driven LED Tube Fixtures with LED Troffers"
 
@@ -61,44 +46,28 @@ Important assumptions to state in the analysis:
 
     The proposed LED troffer wattage is taken directly from the fixture spec sheet since it operates on an integrated driver with no external ballast losses. All other calculations follow the standard methodology above.
 
+### Peak Demand Savings
+
+Peak demand savings from the lighting reduction are:
+
+$$
+\Delta \text{kW} = (W_{\text{baseline}} - W_{\text{proposed}})
+$$
+
+$$
+\Delta \text{kW-months} = \text{kW} \times (\text{CF}_\text{summer} \times 3 + \text{CF}_\text{winter} \times 9)
+$$
+
+where: 
+
+- $\text{CF}_\text{summer}$ = summer coincidence factor (0.81)
+
+- $\text{CF}_\text{winter}$ = winter coincidence factor (0.665)
+
+
 
 ## Anticipated Costs
 
-Obtain equipment costs from vendor quotes or manufacturer pricing for the specific fixture type being recommended. Include both fixture costs and any required accessories (mounting hardware, lenses, etc.). Installation labor costs should be obtained from local electrical contractors or estimated based on project-specific conditions including ceiling height, access constraints, and disposal requirements for existing fixtures.
+Obtain equipment costs from vendor quotes or retail pricing for the specific fixture type being recommended. When calculating labor costs, use 0.25 hours of high-skill labor per fixture to be replaced. 
 
 Check with the local utility provider for current energy efficiency incentive programs. Lighting fixture upgrades often qualify for prescriptive rebates based on fixture type and wattage reduction. Document incentive eligibility requirements and application procedures in the cost analysis.
-
-## Report Requirements
-
-In addition to the [typical report requirements](../how-to.md) and the recommendation-specific savings and costs, the recommendation should include a table documenting all fixtures being replaced. The table should follow this structure:
-
-- **Column 1:** Location or fixture description
-- **Column 2:** Number of fixtures
-- **Column 3:** Baseline fixture wattage (W)
-- **Column 4:** Proposed fixture wattage (W)
-- **Column 5:** Operating hours (hrs/yr)
-- **Column 6:** Annual energy savings (kWh/yr)
-- **Column 7:** Annual demand savings (kW-month)
-- **Column 8:** Annual cost savings ($/yr)
-
-If multiple fixture types are being replaced, include a totals row at the bottom.
-
-```latex
-\begin{table}[H]
-\centering
-\caption{Efficient Lighting Fixture Upgrade Summary}
-\label{tab:lighting-upgrade}
-\begin{tabular}{lcccccccc}
-\toprule
-Location & Quantity & Baseline & Proposed & Operating & Energy & Demand & Cost \\
- &  & Wattage (W) & Wattage (W) & Hours (hrs/yr) & Savings (kWh/yr) & Savings (kW-month) & Savings (\$/yr) \\
-\midrule
-Warehouse High Bay &  &  &  &  &  &  &  \\
-Office Troffers &  &  &  &  &  &  &  \\
-Parking Lot &  &  &  &  &  &  &  \\
-\midrule
-\textbf{Total} & \textbf{} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{} & \textbf{} & \textbf{} \\
-\bottomrule
-\end{tabular}
-\end{table}
-```
