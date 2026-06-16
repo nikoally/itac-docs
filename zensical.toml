@@ -73,9 +73,11 @@ nav = [
             "Recommendations/Compressed Air/high-eff.md",
             "Recommendations/Compressed Air/cold-intake.md",
             "Recommendations/Compressed Air/heat-recovery.md",
+            "Recommendations/Compressed Air/engineered-nozzles.md",
             ]},
         {"HVAC" = [
             "Recommendations/HVAC/hvac-retrofit.md",
+            "Recommendations/HVAC/smart-thermostat.md",
             ]},
         {"Motors" = [
             "Recommendations/Motors/high-efficiency.md",
