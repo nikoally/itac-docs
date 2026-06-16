@@ -78,6 +78,8 @@ nav = [
         {"HVAC" = [
             "Recommendations/HVAC/hvac-retrofit.md",
             "Recommendations/HVAC/smart-thermostat.md",
+            "Recommendations/HVAC/hvac-maintenance.md",
+            "Recommendations/HVAC/boiler-maintenance.md",
             ]},
         {"Motors" = [
             "Recommendations/Motors/high-efficiency.md",
@@ -94,6 +96,8 @@ nav = [
             "Recommendations/Miscellaneous/cool-roof.md",
             "Recommendations/Miscellaneous/electric-forklift.md",
             "Recommendations/Miscellaneous/insulate-pipes.md",
+            "Recommendations/Miscellaneous/purchase-instead-of-lease.md",
+            "Recommendations/Miscellaneous/lease-instead-of-purchase.md",
             ]},
         {"Smart Manufacturing" = [
             "Recommendations/Smart Manufacturing/labor-reallocation-automation.md",

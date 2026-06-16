@@ -57,7 +57,7 @@ Key conventions:
 Every recommendation page must follow this section order:
 
 1. **Intro paragraph** — inline, no `## Overview` heading. One short paragraph describing the measure and why it saves energy.
-2. **`**ARC Code(s):**`** line — immediately after the intro, before any sections.
+2. **`**ARC Code(s):**`** line — immediately after the intro, before any sections. List the codes as a bullet list, one per line, each with its official ARC description in parentheses — e.g. `- 2.7142 (Utilize Higher Efficiency Lamps and/or Ballasts)`. Follow the list with a `---` horizontal rule before `## Savings Calculation`.
 3. **`## Savings Calculation`** — always this heading, not "Calculation Methodology" or similar.
    - `### Annual Energy Savings` — if the calculation is complex enough to need a subsection.
    - `### Peak Demand Savings` — always a separate subsection, never inline.
@@ -75,18 +75,26 @@ Within the savings calculation, always calculate in this order:
 3. **kW-months** (annual demand savings) — always a separate equation multiplying kW by months:
 
 $$
-\Delta kW\text{-months} = (\Delta kW_{\text{summer}} \times 3) + (\Delta kW_{\text{winter}} \times 9)
+\Delta \text{kW-months} = (\Delta \text{kW}_{\text{summer}} \times 3) + (\Delta \text{kW}_{\text{winter}} \times 9)
 $$
 
 This explicit equation makes the 3/9 month split self-documenting; no admonition or prose explanation is needed.
+
+When the demand reduction is a single year-round instantaneous value (e.g. lighting), do not split it into separate summer/winter kW figures. Instead carry one `\Delta \text{kW}` and apply summer/winter **coincidence factors** in the kW-months step:
+
+$$
+\Delta \text{kW-months} = \Delta \text{kW} \times (\text{CF}_{\text{summer}} \times 3 + \text{CF}_{\text{winter}} \times 9)
+$$
+
+State the `\text{CF}_{\text{summer}}` and `\text{CF}_{\text{winter}}` values used in the where-list (they are facility-type- and measure-specific — list each one's value in parentheses).
 
 ### Variable Naming
 
 | Quantity | Variable |
 |---|---|
-| Annual energy savings | `\Delta kWh` (with descriptive subscript if needed) |
-| Peak demand reduction | `\Delta kW_{\text{summer}}`, `\Delta kW_{\text{winter}}` |
-| Annual demand savings | `\Delta kW\text{-months}` (always plural, this exact form) |
+| Annual energy savings | `\Delta \text{kWh}` (with descriptive subscript if needed) |
+| Peak demand reduction | `\Delta \text{kW}`, or `\Delta \text{kW}_{\text{summer}}` / `\Delta \text{kW}_{\text{winter}}` when split seasonally |
+| Annual demand savings | `\Delta \text{kW-months}` (always plural, this exact form) |
 | Consumption (energy) rate | `R_c` ($/kWh) |
 | Demand rate | `R_d` ($/kW-month) |
 | Efficiency | `\eta` (with subscript, e.g. `\eta_{\text{baseline}}`) |
@@ -96,14 +104,14 @@ This explicit equation makes the 3/9 month split self-documenting; no admonition
 - Efficiencies use `\eta` (not `Eff`, `E`, or a spelled-out word).
 - Rates use a capital `R` with a descriptive subscript: `R_c` (consumption), `R_d` (demand), `R_{\text{labor}}`. Do not use `r_e`/`r_d` or spelled-out `\text{Electricity Cost}`.
 - Subscript words are always lowercase and wrapped in `\text{}`: `_{\text{summer}}`, `_{\text{loaded}}`, `_{\text{baseline}}`, `_{\text{prod}}` — never `_{\text{Summer}}` or `_{\text{Prod}}`.
-- Unit abbreviations in variable identifiers (kWh, kW) are left unformatted — do not wrap them in `\text{}`. Multi-letter units that read poorly in italics (MMBtu, gal) may be wrapped in `\text{}` (e.g. `\Delta \text{MMBtu}`, `\text{gal}_{\text{propane}}`).
+- Unit abbreviations in savings variables are wrapped in `\text{}` so they render as one upright token: write `\Delta \text{kWh}`, `\Delta \text{kW}`, `\Delta \text{kW-months}` — never bare `\Delta kWh` or `\Delta kW`. The same applies to multi-letter units that read poorly in italics (`\Delta \text{MMBtu}`, `\text{gal}_{\text{propane}}`).
 
 ### Cost Savings Equation
 
 The dollar conversion is the final step. When shown as an equation, use the standard rate symbols:
 
 $$
-\text{Annual Savings} = (\Delta kWh \times R_c) + (\Delta kW\text{-months} \times R_d)
+\text{Annual Savings} = (\Delta \text{kWh} \times R_c) + (\Delta \text{kW-months} \times R_d)
 $$
 
 ### Where-Lists
@@ -113,11 +121,11 @@ After every equation, introduce the variable list with a lowercase `where:` lead
 ```
 where:
 
-- $\Delta kWh$ = annual energy savings (kWh/yr)
+- $\Delta \text{kWh}$ = annual energy savings (kWh/yr)
 
 - $H$ = annual operating hours (hrs/yr)
 
-- $\Delta kW_{\text{summer}}$ = summer peak demand reduction (kW)
+- $\Delta \text{kW}_{\text{summer}}$ = summer peak demand reduction (kW)
 ```
 
 For a single variable, an inline `where $X$ is ...` sentence is fine instead of a list.
