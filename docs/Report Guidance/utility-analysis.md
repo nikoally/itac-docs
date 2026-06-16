@@ -110,7 +110,7 @@ Open with the **number of meters (or tanks)**, the **account number**, the **sup
 
 **Most Recent Fuel Rates table** — present the per-unit charges (e.g., $/MMBtu) from the most recent billing month. 
 
-**Fuel Usage figure** — explain the consumption pattern, then analyze it. Burned fuels usually show a strong seasonal heating trend; tie the shape to the fuel-fired major consumers (space heating, process heat, boilers) and explain the driver. If the pattern is *not* seasonal, that absence is itself a notable finding worth discussing — it may indicate a process load rather than a heating load. This should also be grounded in and should refer to the [Major Energy Consumers](major-consumers.md) section. 
+**Fuel Usage figure** — explain the consumption pattern, then analyze it. Burned fuels usually show a strong seasonal heating trend; tie the shape to the fuel-fired major consumers (space heating, process heat, boilers) and explain the driver. If the pattern is *not* seasonal, that absence is itself a notable finding worth discussing — it may indicate a process load rather than a heating load. This should also be grounded in and should refer to the [Major Energy Consumers](major-consumers/overview.md) section. 
 
 ## Notes on Writing
 
@@ -122,7 +122,7 @@ Every table and figure in this section requires **two things** in the surroundin
 
 2. **Analyze it.** Say what the evidence *means*. Analysis is the discussion of a **trend**, the **absence of a trend**, or any **other notable finding**, and ideally an explanation of *why* the pattern exists. This is the "so what."
 
-A sentence that only reports numbers ("consumption peaks in January at 77,000 kWh and bottoms out in November at 61,000 kWh") is incomplete. Tie it to the facility: which major consumers drive that pattern, and why does the season, schedule, or process explain it? Link the behavior back to the systems described in [Major Energy Consumers](major-consumers.md).
+A sentence that only reports numbers ("consumption peaks in January at 77,000 kWh and bottoms out in November at 61,000 kWh") is incomplete. Tie it to the facility: which major consumers drive that pattern, and why does the season, schedule, or process explain it? Link the behavior back to the systems described in [Major Energy Consumers](major-consumers/overview.md).
 
 !!! warning "Do not just describe — interpret"
     The most common weakness in this section is restating the chart in words without analyzing it. If your paragraph could be written by someone who has never visited the facility, it is not finished. Every figure and table needs at least one sentence of genuine analysis.
