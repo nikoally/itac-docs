@@ -81,6 +81,9 @@ nav = [
             "Recommendations/HVAC/hvac-maintenance.md",
             "Recommendations/HVAC/boiler-maintenance.md",
             ]},
+        {"Boiler" = [
+            "Recommendations/Boiler/condensing-heat-exchanger.md",
+            ]},
         {"Motors" = [
             "Recommendations/Motors/high-efficiency.md",
             "Recommendations/Motors/high-eff-belts.md",
