@@ -168,7 +168,16 @@ nav = [
         "Report Guidance/facility-overview.md",
         "Report Guidance/process.md",
         "Report Guidance/best-practices.md",
-        "Report Guidance/major-consumers.md",
+        {"Major Energy Consumers" = [
+            "Report Guidance/major-consumers/index.md",
+            {"Machines" = "Report Guidance/major-consumers/machines.md"},
+            {"Compressed Air" = "Report Guidance/major-consumers/compressed-air.md"},
+            {"Boilers" = "Report Guidance/major-consumers/boilers-and-steam.md"},
+            {"Process Heat" = "Report Guidance/major-consumers/process-heat.md"},
+            {"Process Cooling" = "Report Guidance/major-consumers/process-cooling-and-chillers.md"},
+            {"HVAC" = "Report Guidance/major-consumers/hvac.md"},
+            {"Lighting" = "Report Guidance/major-consumers/lighting.md"},
+            ]},
         "Report Guidance/utility-analysis.md",
     ]},
 
@@ -465,3 +474,6 @@ generic = true
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
 clickable_checkbox = true
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
