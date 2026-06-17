@@ -83,6 +83,7 @@ nav = [
             ]},
         {"Boiler" = [
             "Recommendations/Boiler/condensing-heat-exchanger.md",
+            "Recommendations/Boiler/reduce-excess-air.md",
             ]},
         {"Motors" = [
             "Recommendations/Motors/high-efficiency.md",
