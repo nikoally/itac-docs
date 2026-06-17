@@ -23,31 +23,18 @@ The calculator requires the boiler heat input in MMBtu/hr. If it is not directly
 Enter each field as follows:
  
 | MEASUR Field | What to enter | Source |
-
 |---|---|---|
-
 | Operating Hours | Annual boiler runtime (hrs/yr) | Facility logs / production schedule |
-
 | Fuel | Select the correct fuel (e.g. Propane, or Typical Natural Gas – US) | Facility fuel type |
-
 | Fuel Cost | Delivered fuel price ($/MMBtu) | Utility analysis |
-
 | Heat Input | from Step 1 (MMBtu/hr) | Calculated or from nameplate |
-
 | Flue Gas Temperature | Measured stack temperature, $T_{\text{stack}}$ (°F) | Combustion analyzer |
-
 | New Flue Gas Temperature | 100°F | Condensing economizer target outlet temp |
-
 | Percent Oxygen or Excess Air? | Oxygen in Flue Gas | Combustion analyzer |
-
 | O₂ in Flue Gas  | Measured value (%) | Combustion analyzer |
-
 | Combustion Air Temperature | Measured intake air temp, $T_{\text{air}}$ (°F) | Combustion analyzer |
-
 | Moisture in Combustion Air | 1.0% | Standard assumption |
-
 | Fuel Temperature | Use $T_{\text{air}}$ / ambient temperature as an approximation (°F) | Combustion analyzer |
-
 | Ambient Air Temperature | $T_{\text{air}}$ (°F) | Combustion analyzer |
  
 !!! warning "Set the New Flue Gas Temperature to 100°F, not above the dew point"
