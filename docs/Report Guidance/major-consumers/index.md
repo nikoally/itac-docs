@@ -47,8 +47,6 @@ Every system paragraph follows the same order, so the sections read in parallel 
 
 4. The anchor value or values, and how each was derived: measured, nameplate, or estimated.
 
-5. A pointer to the appendix for the supporting detail.
-
 Following the spine is what makes the section scannable. A reader who has read the Compressed Air paragraph already knows where to find the schedule and the anchor value in the Boilers paragraph.
 
 ## Cross-cutting principles
