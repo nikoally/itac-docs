@@ -7,7 +7,9 @@ hide:
 
 Compressed air leaks force compressors to run longer and at higher loads to maintain system pressure, wasting energy continuously. Acoustic imaging cameras detect leaks by visualizing ultrasonic noise during a walkthrough survey, producing a tagged image log of each leak site with a CFM estimate.
 
-**ARC Code(s):** 2.4236
+**ARC Code(s):** 
+
+- 2.4236 (Eliminate Leaks in Inert Gas and Compressed Air Lines/Valves)
 
 ## Savings Calculation
 
@@ -37,11 +39,17 @@ $$
 \Delta kW = \frac{\Delta kWh}{H_{\text{loaded}}}
 $$
 
-where $H_{\text{loaded}}$ is annual compressor loaded operating hours (hrs/yr). Convert to kW-months for the demand savings column:
+where $H_{\text{loaded}}$ is annual compressor loaded operating hours (hrs/yr). Convert to kW-months for the demand savings column, applying summer and winter coincidence factors:
 
 $$
-\Delta kW\text{-months} = \Delta kW \times 12
+\Delta kW\text{-months} = \Delta kW \times (\text{CF}_{\text{summer}} \times 3 + \text{CF}_{\text{winter}} \times 9)
 $$
+
+where:
+
+- $\text{CF}_{\text{summer}}$ = summer coincidence factor (0.947)
+
+- $\text{CF}_{\text{winter}}$ = winter coincidence factor (0.743)
 
 ### Annual Cost Savings
 

@@ -69,6 +69,7 @@ nav = [
             "Recommendations/Compressed Air/measur-setup.md",
             "Recommendations/Compressed Air/leak-repair.md",
             "Recommendations/Compressed Air/leak-repair-fluke.md",
+            "Recommendations/Compressed Air/leak-management.md",
             "Recommendations/Compressed Air/setpoint.md",
             "Recommendations/Compressed Air/high-eff.md",
             "Recommendations/Compressed Air/cold-intake.md",

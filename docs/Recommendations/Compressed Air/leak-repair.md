@@ -7,7 +7,9 @@ hide:
 
 Compressed air leaks are a significant source of energy waste in industrial facilities. Leaks occur at connections, fittings, valves, and distribution system components, causing compressors to run more frequently or at higher loads to maintain system pressure. Repairing leaks reduces compressor energy consumption and demand.
 
-**ARC Code(s):** 2.5121
+**ARC Code(s):** 
+
+- 2.4236 (Eliminate Leaks in Inert Gas and Compressed Air Lines/Valves)
 
 ## Leak Rate Determination from Runtime Data
 
