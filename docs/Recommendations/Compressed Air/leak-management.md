@@ -7,10 +7,11 @@ hide:
 
 A one-time acoustic survey seals the current backlog of leaks, but new leaks keep forming at roughly the same rate, so without recurring attention the savings decay as the leak population rebuilds toward its old level. This recommendation captures the **recurring** savings of catching new leaks each year through a contracted inspection-and-repair program, in which an outside firm performs periodic leak surveys and repairs on a set schedule. It is meant to be claimed **in addition to** the one-time [acoustic leak repair](leak-repair-fluke.md), not instead of it.
 
-**ARC Code(s):** 
+**ARC Code(s):**
 
 - 4.611 (Begin a Practice of Predictive/Preventative Maintenance)
 
+---
 
 ## Savings Calculation
 
@@ -52,7 +53,7 @@ where:
 ### Annual Energy Savings
 
 $$
-\Delta kWh = \frac{Q_{\text{eff}} \times H \times P_{\text{specific}}}{100}
+\Delta \text{kWh} = \frac{Q_{\text{eff}} \times H \times P_{\text{specific}}}{100}
 $$
 
 where:
@@ -68,13 +69,13 @@ where:
 Average demand reduction follows directly from energy savings and loaded compressor hours:
 
 $$
-\Delta kW = \frac{\Delta kWh}{H_{\text{loaded}}}
+\Delta \text{kW} = \frac{\Delta \text{kWh}}{H_{\text{loaded}}}
 $$
 
 where $H_{\text{loaded}}$ is annual compressor loaded operating hours (hrs/yr). Convert to kW-months for the demand savings column, applying summer and winter coincidence factors:
 
 $$
-\Delta kW\text{-months} = \Delta kW \times (\text{CF}_{\text{summer}} \times 3 + \text{CF}_{\text{winter}} \times 9)
+\Delta \text{kW-months} = \Delta \text{kW} \times (\text{CF}_{\text{summer}} \times 3 + \text{CF}_{\text{winter}} \times 9)
 $$
 
 where:

@@ -7,7 +7,13 @@ hide:
 
 When an existing compressor reaches end of life, specifying a premium-efficiency replacement instead of a standard-efficiency unit reduces energy consumption with no change to air delivery capacity. This recommendation addresses only the incremental cost premium above a like-for-like replacement — the facility pays base replacement costs either way.
 
-**ARC Code(s):** 2.4322
+**ARC Code(s):**
+
+- 2.4321 (Upgrade Obsolete Equipment)
+
+- 2.4322 (Use or Replace with Energy Efficient Substitutes)
+
+---
 
 ## Savings Calculation
 
@@ -27,45 +33,40 @@ Build two MEASUR models — one representing the existing compressor and one rep
 
 MEASUR outputs annual energy consumption (kWh) and average demand (kW) for each model. The difference between the existing and proposed system yields annual savings.
 
-### Energy and Demand Savings
+### Annual Energy Savings
 
 $$
-\Delta kWh = kWh_{\text{existing}} - kWh_{\text{proposed}}
-$$
-
-$$
-\Delta kW = kW_{\text{existing}} - kW_{\text{proposed}}
+\Delta \text{kWh} = \text{kWh}_{\text{existing}} - \text{kWh}_{\text{proposed}}
 $$
 
 where:
 
-- $\Delta kWh$ = annual energy savings (kWh/yr)
+- $\Delta \text{kWh}$ = annual energy savings (kWh/yr)
 
-- $kWh_{\text{existing}}$ = annual energy consumption of existing compressor from MEASUR (kWh/yr)
+- $\text{kWh}_{\text{existing}}$ = annual energy consumption of existing compressor from MEASUR (kWh/yr)
 
-- $kWh_{\text{proposed}}$ = annual energy consumption of proposed compressor from MEASUR (kWh/yr)
+- $\text{kWh}_{\text{proposed}}$ = annual energy consumption of proposed compressor from MEASUR (kWh/yr)
 
-- $\Delta kW$ = average demand reduction (kW)
+### Peak Demand Savings
+
+$$
+\Delta \text{kW} = \text{kW}_{\text{existing}} - \text{kW}_{\text{proposed}}
+$$
+
+where:
+
+- $\Delta \text{kW}$ = average demand reduction (kW)
+
+- $\text{kW}_{\text{existing}}$ = average demand of existing compressor from MEASUR (kW)
+
+- $\text{kW}_{\text{proposed}}$ = average demand of proposed compressor from MEASUR (kW)
 
 Convert demand reduction to kW-months for the demand savings column:
 
 $$
-\Delta kW\text{-months} = \Delta kW \times 12
+\Delta \text{kW-months} = \Delta \text{kW} \times 12
 $$
 
-### Annual Cost Savings
-
-$$
-\text{Annual Savings} = (\Delta kWh \times R_c) + (\Delta kW\text{-months} \times R_d)
-$$
-
-where:
-
-- $R_c$ = facility consumption rate ($/kWh)
-
-- $R_d$ = facility demand rate ($/kW-month)
-
-Report consumption and demand savings separately so the facility can update projections when rates change.
 
 !!! note "Assumptions"
 

@@ -48,14 +48,14 @@ When the baseline gun's flow is not published, estimate it from the orifice diam
 The specific power converts compressed-air flow to electrical input power. When a CAGI datasheet is available, take the specific power from the rated load point; otherwise divide the compressor's total package input power by its rated capacity:
 
 $$
-P_{\text{specific}} = \frac{kW_{\text{package}}}{Q_{\text{rated}}}
+P_{\text{specific}} = \frac{\text{kW}_{\text{package}}}{Q_{\text{rated}}}
 $$
 
 where:
 
 - $P_{\text{specific}}$ = compressor specific power (kW/CFM)
 
-- $kW_{\text{package}}$ = total package input power at full load (kW)
+- $\text{kW}_{\text{package}}$ = total package input power at full load (kW)
 
 - $Q_{\text{rated}}$ = rated capacity of the compressor (CFM)
 
@@ -68,12 +68,12 @@ where:
 Annual energy savings depend on how long each part is blown off and how many parts are produced per year:
 
 $$
-\Delta kWh = N_{\text{parts}} \times t \times \Delta Q \times P_{\text{specific}}
+\Delta \text{kWh} = N_{\text{parts}} \times t \times \Delta Q \times P_{\text{specific}}
 $$
 
 where:
 
-- $\Delta kWh$ = annual energy savings (kWh/yr)
+- $\Delta \text{kWh}$ = annual energy savings (kWh/yr)
 
 - $N_{\text{parts}}$ = annual production (parts/yr)
 
@@ -85,43 +85,24 @@ where:
 
 ### Peak Demand Savings
 
-The flow reduction times the specific power gives the instantaneous demand reduction, which is then weighted by the coincidence factor — the probability that the blow-off load is running during the facility peak. For efficient compressed air nozzles, the summer and winter coincidence factors are both 95%:
+The flow reduction times the specific power gives the instantaneous demand reduction:
 
 $$
-\Delta kW_{\text{summer}} = \Delta Q \times P_{\text{specific}} \times 0.95
+\Delta \text{kW} = \Delta Q \times P_{\text{specific}}
 $$
 
-$$
-\Delta kW_{\text{winter}} = \Delta Q \times P_{\text{specific}} \times 0.95
-$$
-
-Annual demand savings in kW-months:
+where $\Delta \text{kW}$ is the instantaneous peak demand reduction (kW). Convert to kW-months for the demand savings column, applying summer and winter coincidence factors:
 
 $$
-\Delta kW\text{-months} = (\Delta kW_{\text{summer}} \times 3) + (\Delta kW_{\text{winter}} \times 9)
+\Delta \text{kW-months} = \Delta \text{kW} \times (\text{CF}_{\text{summer}} \times 3 + \text{CF}_{\text{winter}} \times 9)
 $$
 
 where:
 
-- $\Delta kW_{\text{summer}}$ = summer peak demand reduction with 95% coincidence factor (kW)
+- $\text{CF}_{\text{summer}}$ = summer coincidence factor (0.95)
 
-- $\Delta kW_{\text{winter}}$ = winter peak demand reduction with 95% coincidence factor (kW)
+- $\text{CF}_{\text{winter}}$ = winter coincidence factor (0.95)
 
-- 3 = number of summer months
-
-- 9 = number of winter months
-
-### Annual Cost Savings
-
-$$
-\text{Annual Savings} = (\Delta kWh \times R_c) + (\Delta kW\text{-months} \times R_d)
-$$
-
-where:
-
-- $R_c$ = facility consumption rate ($/kWh)
-
-- $R_d$ = facility demand rate ($/kW-month)
 
 !!! note "Assumptions"
 

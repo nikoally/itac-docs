@@ -11,7 +11,11 @@ Compressed air leaks are a significant source of energy waste in industrial faci
 
 - 2.4236 (Eliminate Leaks in Inert Gas and Compressed Air Lines/Valves)
 
-## Leak Rate Determination from Runtime Data
+---
+
+## Savings Calculation
+
+### Leak Rate Determination from Runtime Data
 
 Compressed air leak rates can be determined by analyzing compressor power consumption during non-production hours when production equipment is idle. During these periods, compressor load represents only system leaks and minimal continuous loads. This method requires electrical monitoring data collected over at least one week to capture representative operating patterns.
 
@@ -51,8 +55,6 @@ Assign power thresholds for each state using hysteresis margins (5-10% of state 
 
     Most rotary screw and reciprocating compressors produce zero CFM when unloaded (intake valve closed). However, some designs may produce minimal flow in the unloaded state. Consult manufacturer documentation to determine the correct unloaded CFM value. If unknown, assume 0 CFM as a conservative estimate.
 
-## Savings Calculation
-
 Energy savings from compressed air leak repair result from reduced compressor runtime and loading. The calculation uses the facility-specific leak rate determined from runtime analysis and the compressor system's specific power (kW per 100 CFM).
 
 ### Annual Energy Savings
@@ -60,12 +62,12 @@ Energy savings from compressed air leak repair result from reduced compressor ru
 Annual energy savings are calculated as:
 
 $$
-\Delta kWh = \frac{Q_{\text{repaired}} \times H \times P_{\text{specific}}}{100}
+\Delta \text{kWh} = \frac{Q_{\text{repaired}} \times H \times P_{\text{specific}}}{100}
 $$
 
 where:
 
-- $\Delta kWh$ = annual energy savings (kWh/yr)
+- $\Delta \text{kWh}$ = annual energy savings (kWh/yr)
 
 - $Q_{\text{repaired}}$ = leak rate repaired (CFM), typically 50-80% of identified leak rate
 
@@ -86,35 +88,24 @@ Important assumptions to state in the analysis:
 
 ### Peak Demand Savings
 
-Demand savings occur when leak repair reduces compressor loading during facility peak demand periods. Calculate demand savings separately for summer (3 months) and winter (9 months) periods with appropriate coincidence factors:
+Average demand reduction follows directly from the leak rate and specific power:
 
 $$
-\Delta kW_{\text{summer}} = \frac{Q_{\text{repaired}} \times P_{\text{specific}}}{100} \times 0.947
+\Delta \text{kW} = \frac{Q_{\text{repaired}} \times P_{\text{specific}}}{100}
 $$
 
-$$
-\Delta kW_{\text{winter}} = \frac{Q_{\text{repaired}} \times P_{\text{specific}}}{100} \times 0.743
-$$
-
-Annual demand savings in kW-months:
+where $\Delta \text{kW}$ is the instantaneous peak demand reduction (kW). Convert to kW-months for the demand savings column, applying summer and winter coincidence factors:
 
 $$
-\Delta kW\text{-months} = (\Delta kW_{\text{summer}} \times 3) + (\Delta kW_{\text{winter}} \times 9)
+\Delta \text{kW-months} = \Delta \text{kW} \times (\text{CF}_{\text{summer}} \times 3 + \text{CF}_{\text{winter}} \times 9)
 $$
 
 where:
 
-- $\Delta kW_{\text{summer}}$ = summer peak demand reduction with 94.7% coincidence factor
+- $\text{CF}_{\text{summer}}$ = summer coincidence factor (0.947)
 
-- $\Delta kW_{\text{winter}}$ = winter peak demand reduction with 74.3% coincidence factor
+- $\text{CF}_{\text{winter}}$ = winter coincidence factor (0.743)
 
-- 3 = number of summer months
-
-- 9 = number of winter months
-
-!!! note "Coincidence Factors"
-
-    The coincidence factors (94.7% for summer, 74.3% for winter) account for the probability that leak-related compressor demand occurs during facility peak demand periods. These values are based on typical industrial compressed air system load profiles.
 
 ## Anticipated Costs
 

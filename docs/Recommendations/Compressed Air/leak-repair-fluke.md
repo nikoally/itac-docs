@@ -11,6 +11,8 @@ Compressed air leaks force compressors to run longer and at higher loads to main
 
 - 2.4236 (Eliminate Leaks in Inert Gas and Compressed Air Lines/Valves)
 
+---
+
 ## Savings Calculation
 
 Savings come from reduced compressor loading once leaks are sealed. The acoustic imager reports flow loss (CFM) per detected leak; sum across all identified leaks to get the total repaired leak rate.
@@ -18,12 +20,12 @@ Savings come from reduced compressor loading once leaks are sealed. The acoustic
 ### Annual Energy Savings
 
 $$
-\Delta kWh = \frac{Q_{\text{leaks}} \times H \times P_{\text{specific}}}{100}
+\Delta \text{kWh} = \frac{Q_{\text{leaks}} \times H \times P_{\text{specific}}}{100}
 $$
 
 where:
 
-- $\Delta kWh$ = annual energy savings (kWh/yr)
+- $\Delta \text{kWh}$ = annual energy savings (kWh/yr)
 
 - $Q_{\text{leaks}}$ = total leak flow rate repaired (CFM)
 
@@ -36,13 +38,13 @@ where:
 Average demand reduction follows directly from energy savings and loaded compressor hours:
 
 $$
-\Delta kW = \frac{\Delta kWh}{H_{\text{loaded}}}
+\Delta \text{kW} = \frac{\Delta \text{kWh}}{H_{\text{loaded}}}
 $$
 
 where $H_{\text{loaded}}$ is annual compressor loaded operating hours (hrs/yr). Convert to kW-months for the demand savings column, applying summer and winter coincidence factors:
 
 $$
-\Delta kW\text{-months} = \Delta kW \times (\text{CF}_{\text{summer}} \times 3 + \text{CF}_{\text{winter}} \times 9)
+\Delta \text{kW-months} = \Delta \text{kW} \times (\text{CF}_{\text{summer}} \times 3 + \text{CF}_{\text{winter}} \times 9)
 $$
 
 where:
@@ -51,21 +53,6 @@ where:
 
 - $\text{CF}_{\text{winter}}$ = winter coincidence factor (0.743)
 
-### Annual Cost Savings
-
-Total annual savings include both consumption and demand charges:
-
-$$
-\text{Annual Savings} = (\Delta kWh \times R_c) + (\Delta kW\text{-months} \times R_d)
-$$
-
-where:
-
-- $R_c$ = facility consumption rate (\$/kWh)
-
-- $R_d$ = facility demand rate (\$/kW-month)
-
-Report consumption and demand savings separately so the facility can update projections when rates change.
 
 !!! warning "Survey Coverage"
     If the survey occurs during production hours, background noise reduces detection sensitivity and the reported CFM total is a lower bound on actual facility leakage. Calculate a leak rate per square foot from the surveyed area, then multiply by total facility area to estimate full-system leakage. Recommend a follow-up non-production survey and note the coverage limitation in the report.

@@ -9,13 +9,13 @@ hide:
 
 Using cold outdoor air for compressor intake instead of warm indoor air reduces compressor energy consumption. Air density increases as temperature decreases, meaning cooler intake air requires less compression work to reach target discharge pressure. This measure is most effective in climates with significant outdoor temperature variation throughout the year.
 
+A **smart damper** system automatically switches between outdoor and indoor intake based on temperature, ensuring outdoor air is only used when it is actually cooler than indoor air. This avoids the penalty of drawing in hot outdoor air during summer months.
+
 **ARC Code(s):**
 
-## How It Works
+- 2.4221 (Install Compressor Air Intakes in Coolest Locations)
 
-Compression work is proportional to inlet air temperature. Lower intake temperature means less energy to compress the same volume of air to the same discharge pressure. Most facilities locate compressors indoors where temperatures are elevated by process heat, HVAC loads, and compressor waste heat. Ducting intake air from outdoors during cooler months reduces compression energy.
-
-A **smart damper** system automatically switches between outdoor and indoor intake based on temperature, ensuring outdoor air is only used when it is actually cooler than indoor air. This avoids the penalty of drawing in hot outdoor air during summer months.
+---
 
 ## VSD Isentropic Efficiency Estimator
 

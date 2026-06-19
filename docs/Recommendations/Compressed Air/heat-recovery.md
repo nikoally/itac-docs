@@ -7,38 +7,42 @@ hide:
 
 Recovering waste heat from electric air compressors can offset heating fuel consumption in facilities with space heating or process heating loads. The approach accounts for the thermodynamic reality that not all electrical input to a compressor becomes recoverable waste heat, and that not all recoverable heat necessarily displaces purchased heating fuel.
 
-**ARC Code(s):** X.XXXX
+**ARC Code(s):**
 
-## Technical Background
+- 2.4239 (Eliminate or Reduce Compressed Air Usage)
 
-Electric air compressors convert electrical energy into compressed air and waste heat. The compression process is thermodynamically inefficient; the majority of input electrical energy is rejected as heat through the oil cooler, aftercooler, and compressor housing. Only a small fraction of the input energy is retained as useful work in the compressed air stream (i.e., the enthalpy increase of the air leaving the system).
+---
 
-For a typical industrial air compressor, approximately 80% to 93% of input electrical energy is converted to heat rejected through the oil cooler, aftercooler, and compressor housing. The DOE/Compressed Air Challenge *Sourcebook* uses a baseline assumption of roughly 80% recoverable heat at full load, yielding approximately 50,000 Btu/hr per 100 cfm of compressor capacity.
+??? note "Technical Background"
 
-The simplest form of heat recovery is air-to-air exhaust venting: instead of venting the heated compressor room air to the outdoors, ductwork and dampers redirect the warm exhaust air into adjacent facility spaces during the heating season. This approach displaces fuel that would otherwise be consumed by the facility's existing heating system.
+    Electric air compressors convert electrical energy into compressed air and waste heat. The compression process is thermodynamically inefficient; the majority of input electrical energy is rejected as heat through the oil cooler, aftercooler, and compressor housing. Only a small fraction of the input energy is retained as useful work in the compressed air stream (i.e., the enthalpy increase of the air leaving the system).
 
-## Background
+    For a typical industrial air compressor, approximately 80% to 93% of input electrical energy is converted to heat rejected through the oil cooler, aftercooler, and compressor housing. The DOE/Compressed Air Challenge *Sourcebook* uses a baseline assumption of roughly 80% recoverable heat at full load, yielding approximately 50,000 Btu/hr per 100 cfm of compressor capacity.
 
-The fundamental unit conversion underlying this calculation is:
+    The simplest form of heat recovery is air-to-air exhaust venting: instead of venting the heated compressor room air to the outdoors, ductwork and dampers redirect the warm exhaust air into adjacent facility spaces during the heating season. This approach displaces fuel that would otherwise be consumed by the facility's existing heating system.
 
-$$
-1 \text{ HP} = 746 \text{ W} = 2{,}545 \text{ Btu/hr}
-$$
+??? note "Unit Conversion Reference"
 
-This is a standard thermodynamic equivalence (not an empirical approximation). It follows directly from the definition of mechanical horsepower: 1 HP = 746 watts, and 1 watt = 3.412 Btu/hr, so 746 x 3.412 = 2,545 Btu/hr. The equivalent in SI terms is 1 kW = 3,412 Btu/hr.
+    The fundamental unit conversion underlying this calculation is:
 
-This conversion gives the total energy equivalent of the electrical input. It does not mean that all input energy becomes waste heat. A portion of the input energy is retained as useful work in the compressed air (i.e., the enthalpy increase of the air stream leaving the system). The remainder is rejected as heat through the compressor's cooling systems.
+    $$
+    1 \text{ HP} = 746 \text{ W} = 2{,}545 \text{ Btu/hr}
+    $$
 
-The heat rejection fraction depends on compressor type:
+    This is a standard thermodynamic equivalence (not an empirical approximation). It follows directly from the definition of mechanical horsepower: 1 HP = 746 watts, and 1 watt = 3.412 Btu/hr, so 746 x 3.412 = 2,545 Btu/hr. The equivalent in SI terms is 1 kW = 3,412 Btu/hr.
 
-| Compressor Type | Heat Rejection Factor | Source / Notes |
-|---|---|---|
-| Lubricant-injected rotary screw (air-cooled) | 0.80 to 0.90 | DOE Sourcebook; majority of heat in oil cooler and aftercooler |
-| Oil-free rotary screw | 0.85 to 0.93 | Higher discharge temps yield more recoverable energy |
-| Reciprocating (air-cooled) | 0.50 to 0.70 | Lower recovery potential; heat split across cylinders and aftercooler |
-| Centrifugal | 0.80 to 0.90 | Intercooler and aftercooler are primary recovery points |
+    This conversion gives the total energy equivalent of the electrical input. It does not mean that all input energy becomes waste heat. A portion of the input energy is retained as useful work in the compressed air (i.e., the enthalpy increase of the air stream leaving the system). The remainder is rejected as heat through the compressor's cooling systems.
 
-For air-cooled compressors, nearly all of the rejected heat warms the compressor room air. In a typical installation, the compressor room is ventilated to prevent overheating, and this warm exhaust air (typically 20 to 40 F above ambient) is vented outdoors. Redirecting this exhaust into the facility during the heating season captures the heat at no additional energy cost.
+    The heat rejection fraction depends on compressor type:
+
+    | Compressor Type | Heat Rejection Factor | Source / Notes |
+    |---|---|---|
+    | Lubricant-injected rotary screw (air-cooled) | 0.80 to 0.90 | DOE Sourcebook; majority of heat in oil cooler and aftercooler |
+    | Oil-free rotary screw | 0.85 to 0.93 | Higher discharge temps yield more recoverable energy |
+    | Reciprocating (air-cooled) | 0.50 to 0.70 | Lower recovery potential; heat split across cylinders and aftercooler |
+    | Centrifugal | 0.80 to 0.90 | Intercooler and aftercooler are primary recovery points |
+
+    For air-cooled compressors, nearly all of the rejected heat warms the compressor room air. In a typical installation, the compressor room is ventilated to prevent overheating, and this warm exhaust air (typically 20 to 40 F above ambient) is vented outdoors. Redirecting this exhaust into the facility during the heating season captures the heat at no additional energy cost.
 
 ## Savings Calculation
 
@@ -117,29 +121,18 @@ Common heating system efficiencies:
 | Oil Boiler/Furnace | 80 to 88% |
 | Electric Resistance | ~100% |
 
-### Annual Cost Savings
-
-$$
-\text{Annual Savings} = \text{Fuel Displaced} \times \text{Fuel Cost per Unit}
-$$
-
 ### Electric Resistance Demand Savings
 
 When the displaced heating system is electric resistance, the demand reduction during heating months provides additional demand charge savings:
 
 $$
-\Delta kW = \frac{Q_{\text{recoverable}}}{3{,}412 \times \eta_{\text{heating}}}
+\Delta \text{kW} = \frac{Q_{\text{recoverable}}}{3{,}412 \times \eta_{\text{heating}}}
 $$
 
 $$
-\Delta kW\text{-months} = \Delta kW \times N_{\text{heating}}
+\Delta \text{kW-months} = \Delta \text{kW} \times N_{\text{heating}}
 $$
 
-$$
-\text{Demand Savings} = \Delta kW\text{-months} \times R_d
-$$
-
-where $R_d$ is the facility demand rate (\$/kW-month).
 
 ## Anticipated Costs
 
