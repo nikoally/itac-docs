@@ -83,7 +83,7 @@ A VFD reduces the motor speed to match the required flow. Because power drops wi
 
 ## Limitations and Considerations
 
-!!! info "Affinity Law Assumptions"
+!!! note "Affinity Law Assumptions"
 
     The affinity laws assume:
 

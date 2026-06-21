@@ -32,7 +32,7 @@ Line charts show trends over time or continuous relationships between variables.
 
 - Limit to 3-4 lines maximum to maintain readability
 
-!!! info "ITAC Applications"
+!!! note "ITAC Applications"
 
     - Compressed air system pressure over a week
 
@@ -66,7 +66,7 @@ Bar charts compare discrete categories or show composition.
 
 - For many categories, consider horizontal bars for better label readability
 
-!!! info "ITAC Applications"
+!!! note "ITAC Applications"
 
     - Energy consumption by end use (motors, lighting, HVAC, process)
 
@@ -104,7 +104,7 @@ Pie charts show parts of a whole as percentages.
 
     Humans are poor at comparing angles and areas. It's hard to show precise differences when slices are similar in size, and pie charts do not scale well beyond a few categories. Bar charts almost always communicate the same information more clearly.
 
-!!! info "The Utility Pie at ITAC"
+!!! note "The Utility Pie at ITAC"
 
     Despite its limitations, ITAC reports must include a pie chart showing facility energy consumption by fuel type (electricity, natural gas, propane, fuel oil, etc.). This is a Rutgers Field Office requirement for standardization across all IAC centers. Use it for this purpose only.
 

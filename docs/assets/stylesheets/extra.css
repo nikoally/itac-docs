@@ -8,57 +8,30 @@
 }
 
 /* 2. DYNAMIC HEADER & TABS SETUP */
-.md-header {
+.md-header,
+.md-header--shadow {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 40;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+.md-header__inner {
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 .md-tabs {
   position: -webkit-sticky;
   position: relative !important; /* Not sticky, scrolls with page */
-  top: 0px; 
+  top: 0px;
   z-index: 30;
   width: 100%;
   display: block !important;
   visibility: visible !important;
   height: auto !important;
-  background-color: transparent; 
-}
-
-/* --- LIGHT MODE SETTINGS --- */
-[data-md-color-scheme="default"] .md-header,
-[data-md-color-scheme="default"] .md-tabs {
-  background-color: #ffffff !important; 
-  color: #000000 !important;          
-  border-bottom: 1px solid #e0e0e0;     
-}
-
-[data-md-color-scheme="default"] .md-tabs__link {
-  color: rgba(0, 0, 0, 0.7) !important;
-}
-[data-md-color-scheme="default"] .md-tabs__link:hover,
-[data-md-color-scheme="default"] .md-tabs__link--active {
-  color: #000000 !important; 
-  font-weight: bold;
-}
-
-/* --- DARK MODE SETTINGS --- */
-[data-md-color-scheme="slate"] .md-header,
-[data-md-color-scheme="slate"] .md-tabs {
-  background-color: #000000 !important; 
-  color: #ffffff !important;              
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-[data-md-color-scheme="slate"] .md-tabs__link {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-[data-md-color-scheme="slate"] .md-tabs__link:hover,
-[data-md-color-scheme="slate"] .md-tabs__link--active {
-  color: #ffffff !important;
-  font-weight: bold;
+  background-color: transparent;
 }
 
 /* 3. FORCE LINKS TO DISPLAY */
@@ -76,7 +49,7 @@
 
 /* 4. CONTENT SPACING */
 .md-main {
-  padding-top: 10px !important; 
+  padding-top: 10px !important;
 }
 @media screen and (max-width: 1220px) {
   .md-main__inner { padding-top: 0 !important; margin-top: 0 !important; }
@@ -87,21 +60,21 @@
   position: absolute;
   top: -100px;
   left: 0;
-  background: #000;
+  background: var(--itac-ink);
   color: #fff;
   padding: 10px 20px;
   z-index: 1000;
   font-weight: bold;
 }
-.skip-link:focus { top: 0; outline: 4px solid #FFCC00; }
+.skip-link:focus { top: 0; outline: 3px solid var(--itac-cobalt); }
 
-/* Universal Focus Ring */
+/* Universal Focus Ring — cobalt, per brand */
 :focus-visible {
-  outline: 4px solid #FFCC00 !important;
-  outline-offset: -2px;
+  outline: 3px solid var(--itac-cobalt) !important;
+  outline-offset: 1px;
 }
 [data-md-color-scheme="slate"] :focus-visible {
-  outline: 4px solid hsl(222, 99%, 65%) !important;
+  outline: 3px solid var(--itac-cobalt-on-dark) !important;
 }
 
 .md-sidebar--secondary {
@@ -109,59 +82,210 @@
 }
 
 /* ==========================================================================
-   UCONN ITAC BRAND COLORS  hsl(222, 99%, L)
+   UCONN ITAC BRAND TOKENS
+   Cobalt-anchored palette from the UConn ITAC Design System.
+   Hue-fixed base tokens; schemes below map them onto Material's --md-* vars.
    ========================================================================== */
+:root {
+  /* Brand / primary */
+  --itac-cobalt:        #013ecd; /* primary / brand anchor */
+  --itac-cobalt-dark:   #012da0; /* hover / active on primary */
+  --itac-cobalt-light:  #3a6ad9; /* lighter accent */
+  --itac-cobalt-pale:   #d6e0fa; /* selected row, info background */
+  --itac-cobalt-palest: #eef3fd; /* section background wash */
 
-/* Override MkDocs Material primary/accent CSS variables */
-:root,
-[data-md-color-primary="indigo"],
-[data-md-color-accent="indigo"] {
-  --md-primary-fg-color:        hsl(222, 99%, 40%);
-  --md-primary-fg-color--light: hsl(222, 99%, 55%);
-  --md-primary-fg-color--dark:  hsl(222, 99%, 28%);
-  --md-accent-fg-color:         hsl(222, 99%, 40%);
-  --md-accent-fg-color--transparent: hsla(222, 99%, 40%, 0.1);
-  --md-typeset-a-color:         hsl(222, 99%, 45%);
+  /* Semantic accents (signal meaning, not decoration) */
+  --itac-azure:   #00a6fb; /* links, interactive */
+  --itac-green:   #20bf55; /* success, savings */
+  --itac-crimson: #db2955; /* error, critical flags */
+  --itac-orange:  #ff7700; /* warning, highlight */
+
+  /* Neutrals (slightly blue-tinted) */
+  --itac-ink:      #0d1426; /* near-black, primary text */
+  --itac-gray-700: #3d4659; /* dark gray, secondary text */
+  --itac-gray-500: #6b7385; /* mid gray, captions / disabled */
+  --itac-gray-300: #c7ccd6; /* light gray, borders / dividers */
+  --itac-gray-100: #eef0f4; /* pale gray, subtle backgrounds */
+  --itac-offwhite: #fafbfc; /* off-white, page background */
+  --itac-white:    #ffffff; /* white, cards / surfaces */
+
+  /* Data-viz categorical series order: cobalt → green → azure → crimson → orange */
+  --itac-chart-1: var(--itac-cobalt);
+  --itac-chart-2: var(--itac-green);
+  --itac-chart-3: var(--itac-azure);
+  --itac-chart-4: var(--itac-crimson);
+  --itac-chart-5: var(--itac-orange);
 }
 
+/* --------------------------------------------------------------------------
+   LIGHT SCHEME (default) — straight from the brand brief
+   -------------------------------------------------------------------------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        var(--itac-cobalt);
+  --md-primary-fg-color--light: var(--itac-cobalt-light);
+  --md-primary-fg-color--dark:  var(--itac-cobalt-dark);
+  --md-primary-bg-color:        var(--itac-white);
+
+  --md-accent-fg-color:             var(--itac-cobalt);
+  --md-accent-fg-color--transparent: rgba(1, 62, 205, 0.1);
+
+  --md-default-bg-color:          var(--itac-offwhite);
+  --md-default-fg-color:          var(--itac-ink);
+  --md-default-fg-color--light:   var(--itac-gray-700);
+  --md-default-fg-color--lighter: var(--itac-gray-500);
+  --md-default-fg-color--lightest: var(--itac-gray-300);
+
+  --md-typeset-a-color:    var(--itac-cobalt);
+  --md-typeset-mark-color: var(--itac-cobalt-pale);
+}
+
+/* --------------------------------------------------------------------------
+   DARK SCHEME (slate) — derived: brand hue, cobalt lightened for contrast
+   -------------------------------------------------------------------------- */
 [data-md-color-scheme="slate"] {
-  --md-typeset-a-color:         hsl(222, 99%, 65%);
-  --md-accent-fg-color:         hsl(222, 99%, 65%);
-}
+  --md-hue: 222; /* retint the whole slate scheme toward the brand hue */
 
-/* Active nav link in sidebar */
-.md-nav__link--active,
-.md-nav__link--active:focus,
-.md-nav__link--active:hover {
-  color: hsl(222, 99%, 40%) !important;
-}
-[data-md-color-scheme="slate"] .md-nav__link--active,
-[data-md-color-scheme="slate"] .md-nav__link--active:focus,
-[data-md-color-scheme="slate"] .md-nav__link--active:hover {
-  color: hsl(222, 99%, 65%) !important;
-}
+  --md-primary-fg-color:        var(--itac-cobalt-light);
+  --md-primary-fg-color--light: var(--itac-cobalt-on-dark);
+  --md-primary-fg-color--dark:  var(--itac-cobalt);
+  --md-primary-bg-color:        var(--itac-offwhite);
 
-/* Hover state for all nav links */
-.md-nav__link:hover {
-  color: hsl(222, 99%, 45%) !important;
-}
-[data-md-color-scheme="slate"] .md-nav__link:hover {
-  color: hsl(222, 99%, 68%) !important;
+  --md-accent-fg-color:             var(--itac-cobalt-on-dark);
+  --md-accent-fg-color--transparent: rgba(111, 155, 255, 0.12);
+
+  --md-typeset-a-color:    var(--itac-cobalt-on-dark);
+  --md-typeset-mark-color: rgba(58, 106, 217, 0.4);
 }
 
 /* ==========================================================================
-   INFO ADMONITION & DARK MODE HIGHLIGHT — align to #013ECD
+   HEADER & TABS — same background as the page, cobalt accents
    ========================================================================== */
-
-/* Override theme defaults for info (#00b8d4) and note (#448aff) admonitions */
-.md-typeset .admonition.note,
-.md-typeset details.note {
-  background-color: #013ecd1a;
-  border-color: #013ECD;
+.md-header,
+.md-tabs {
+  background-color: transparent !important;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  color: var(--itac-ink) !important;
+}
+[data-md-color-scheme="default"] .md-header {
+  border-bottom: none;
+}
+[data-md-color-scheme="default"] .md-tabs {
+  border-bottom: 1px solid var(--itac-ink);
+}
 
-/* Dark mode text highlight (==mark==) */
-[data-md-color-scheme="slate"] {
-  --md-typeset-mark-color: #013ecd4d;
+[data-md-color-scheme="default"] .md-tabs__link {
+  color: var(--itac-gray-700) !important;
+}
+[data-md-color-scheme="default"] .md-tabs__link:hover,
+[data-md-color-scheme="default"] .md-tabs__link--active {
+  color: var(--itac-cobalt) !important;
+}
+
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  color: var(--itac-offwhite) !important;
+}
+[data-md-color-scheme="slate"] .md-header {
+  border-bottom: none;
+}
+[data-md-color-scheme="slate"] .md-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: rgba(250, 251, 252, 0.7) !important;
+}
+[data-md-color-scheme="slate"] .md-tabs__link:hover,
+[data-md-color-scheme="slate"] .md-tabs__link--active {
+  color: var(--itac-cobalt-on-dark) !important;
+}
+
+/* ==========================================================================
+   SIDEBAR NAV — active + hover use cobalt
+   ========================================================================== */
+.md-nav__link--active,
+.md-nav__link--active:focus,
+.md-nav__link--active:hover {
+  color: var(--itac-cobalt) !important;
+}
+.md-nav__link:hover {
+  color: var(--itac-cobalt) !important;
+}
+[data-md-color-scheme="slate"] .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav__link--active:focus,
+[data-md-color-scheme="slate"] .md-nav__link--active:hover,
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+  color: var(--itac-cobalt-on-dark) !important;
+}
+
+/* Keep the sidebar scrollbar a constant gray — no cobalt shift on hover/focus */
+.md-sidebar__scrollwrap:focus-within,
+.md-sidebar__scrollwrap:hover {
+  scrollbar-color: var(--md-default-fg-color--lighter) #0000;
+}
+.md-sidebar__scrollwrap:focus-within::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb,
+.md-sidebar__scrollwrap:focus-within::-webkit-scrollbar-thumb:hover,
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb:hover {
+  background-color: var(--md-default-fg-color--lighter);
+}
+
+/* Softer, more transparent hover tint on sidebar items */
+.md-nav--primary .md-nav__link[for]:hover:not(.md-nav__link--active),
+.md-nav--primary .md-nav__link[href]:hover:not(.md-nav__link--active),
+.md-nav--primary .md-nav__link[for]:focus:not(.md-nav__link--active),
+.md-nav--primary .md-nav__link[href]:focus:not(.md-nav__link--active) {
+  background-color: rgba(13, 20, 38, 0.04) !important;
+}
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link[for]:hover:not(.md-nav__link--active),
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link[href]:hover:not(.md-nav__link--active),
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link[for]:focus:not(.md-nav__link--active),
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link[href]:focus:not(.md-nav__link--active) {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ==========================================================================
+   ADMONITIONS — mapped to brand semantic accents
+   note → azure · tip → green · warning → orange · example → neutral
+   One uniform body tint per type; the title bar is transparent so it shows the
+   same tint through (no second layer stacking on top). Accent = border + icon.
+   ========================================================================== */
+
+/* Title bar inherits the body tint instead of adding its own layer */
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  background-color: transparent;
+}
+
+/* note → azure */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--itac-azure);
+  background-color: rgba(0, 166, 251, 0.1);
+}
+
+/* tip → green */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--itac-green);
+  background-color: rgba(32, 191, 85, 0.1);
+}
+
+/* warning → orange */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: var(--itac-orange);
+  background-color: rgba(255, 119, 0, 0.1);
+}
+
+/* example → neutral (kept off the semantic accents, which signal meaning) */
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  border-color: var(--itac-gray-500);
+  background-color: rgba(107, 115, 133, 0.1);
 }

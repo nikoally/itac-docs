@@ -49,7 +49,7 @@ The discount rate reflects the opportunity cost of capital. If a company can ear
 
 Different organizations use different discount rates based on their cost of capital, risk tolerance, and alternative investment opportunities. Higher discount rates make future cash flows worth less in present terms, which favors projects with quick returns.
 
-!!! info "Typical Discount Rates"
+!!! note "Typical Discount Rates"
 
     - **Industrial facilities:** 10-15% (reflecting the return they expect from production equipment)
     - **Government projects:** 3-7% (based on treasury rates and public policy considerations)

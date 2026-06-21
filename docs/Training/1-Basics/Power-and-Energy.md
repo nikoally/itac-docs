@@ -115,7 +115,7 @@ In industrial settings, thermal energy quantities become very large. We use MMBt
 
 $$1 \text{ MMBtu} = 1{,}000{,}000 \text{ BTU} = 10^6 \text{ BTU}$$
 
-!!! info "MMBtu Notation"
+!!! note "MMBtu Notation"
 
     The "MM" comes from the Roman numeral system where M = 1,000, so MM = 1,000 × 1,000 = 1,000,000. You may also see this written as MBtu in some contexts, but MMBtu is standard in the energy industry.
 

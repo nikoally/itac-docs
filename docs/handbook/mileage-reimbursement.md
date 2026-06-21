@@ -58,7 +58,7 @@ If you live **on campus**, make sure:
 
 Even though mileage is calculated within Concur, you must include a **receipt** for verification.
 
-!!! info
+!!! note
     To generate the mileage receipt:
     
     1. Open **Google Maps** or **Apple Maps**.  

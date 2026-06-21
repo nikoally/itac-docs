@@ -191,7 +191,7 @@ Pumps are often oversized due to:
 4. **Higher capital cost:** Larger pump, larger motor, larger starter
 5. **Higher maintenance:** Increased wear from operating away from BEP
 
-!!! info "Identifying Oversized Pumps"
+!!! note "Identifying Oversized Pumps"
 
     During ITAC assessments, look for:
 

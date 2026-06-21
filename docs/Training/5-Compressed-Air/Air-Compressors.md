@@ -69,7 +69,7 @@ The right approach is to measure pressure at critical end uses during peak deman
 
 Cooler air is denser, so compressing cool air requires less energy than compressing warm air. Every 5°F reduction in intake air temperature reduces compressor energy by approximately 1%. There are two main options: use a damper system to pull conditioned air from inside during the summer and cold air from outside in the winter, or always pull air in from outside (which generally has a quicker payback period in the northeast).
 
-!!! info "Humidity Concerns"
+!!! note "Humidity Concerns"
 
     Some worry that outdoor summer air (high humidity) will overload oil separators in rotary screw compressors. This is rarely a problem, but if it occurs, use indoor air during peak humidity periods.
 
