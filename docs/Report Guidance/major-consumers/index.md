@@ -71,4 +71,6 @@ Before writing anything, map the facility's actual equipment onto the template r
 
 - Resolve the HVAC versus chiller boundary up front. Comfort cooling can plausibly be counted under either heading. Decide where it lives and state it, so no cooling load is double counted or dropped. See the [HVAC](hvac.md) and [Process Cooling and Chillers](process-cooling-and-chillers.md) pages for the same boundary described from both sides.
 
+- Resolve the HVAC versus boiler boundary the same way. Space heat can be supplied by packaged HVAC or by a boiler, so decide where the heating load lives and state it. See the [HVAC](hvac.md) and [Boilers and Steam](boilers-and-steam.md) pages for both sides.
+
 - Delete any template row the facility does not have. An empty row implies a consumer that is not there and breaks the energy balance.
