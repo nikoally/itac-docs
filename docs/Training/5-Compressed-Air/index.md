@@ -1,4 +1,9 @@
-# Introduction
+---
+hide:
+  - toc
+---
+
+# Module 5: Compressed Air
 
 Compressed air is often called the "fourth utility" alongside electricity, natural gas, and water. In manufacturing facilities, compressed air powers pneumatic tools, actuates machinery, moves products through production lines, and performs countless other tasks. Despite its ubiquity, compressed air is frequently the most inefficient and poorly managed energy system in a plant.
 
@@ -9,6 +14,7 @@ Between 5% and 20% of industrial electricity consumption goes toward compressed 
 Compressed air is expensive to produce because the compression process itself is thermodynamically inefficient. For every unit of energy delivered as compressed air to the end use, approximately seven to eight units of electrical energy must be input at the compressor. Most of this energy is lost as heat during compression.
 
 Despite this poor efficiency, compressed air remains valuable because:
+
 - Pneumatic tools are lighter and more compact than electric equivalents
 - Compressed air provides precise control over speed and torque
 - There are no electrical shock hazards in wet or hazardous environments
@@ -38,5 +44,11 @@ By the end of this module, you should be able to:
 - Distinguish between appropriate and inappropriate compressed air applications
 - Develop comprehensive compressed air recommendations for ITAC assessments
 
-
 Throughout the module, we'll emphasize a critical principle: **compressed air is not free**!!! Every cubic foot of compressed air represents significant electrical cost, and treating it as a valuable resource drives all efficiency improvements.
+
+## In This Module
+
+- [Pressure and Flow Fundamentals](Pressure-and-Flow-Fundamentals.md) — the physics of pressure, flow, and how they drive energy use
+- [Air Compressors](Air-Compressors.md) — compressor types, controls, and supply-side efficiency
+- [Distribution](Distribution.md) — piping, storage, leaks, and pressure drop
+- [End Uses](End-Uses.md) — appropriate and inappropriate applications on the demand side

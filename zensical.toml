@@ -112,48 +112,43 @@ nav = [
 
     {"Training" = [
         {"Module 1: Power and Energy Fundamentals" = [
-            "Training/1-Basics/Introduction.md",
+            "Training/1-Basics/index.md",
             "Training/1-Basics/Power-and-Energy.md",
             "Training/1-Basics/AC-Power.md",
             "Training/1-Basics/Utilities.md",
-            "Training/1-Basics/Conclusion.md",
             ]},
 
         {"Module 2: Engineering Economics" = [
-            "Training/2-Engineering-Economics/Introduction.md",
+            "Training/2-Engineering-Economics/index.md",
             "Training/2-Engineering-Economics/Cash-Flows.md",
             "Training/2-Engineering-Economics/TVM-and-NPV.md",
             "Training/2-Engineering-Economics/Payback.md",
             "Training/2-Engineering-Economics/Lost-Opportunity-vs-Retrofit.md",
-            "Training/2-Engineering-Economics/Conclusion.md",
             ]},
 
         {"Module 3: Technical Writing" = [
-            "Training/3-Technical-Writing/Introduction.md",
+            "Training/3-Technical-Writing/index.md",
             "Training/3-Technical-Writing/Technical-Writing.md",
             "Training/3-Technical-Writing/Graphs.md",
             "Training/3-Technical-Writing/Style.md",
             "Training/3-Technical-Writing/LaTeX.md",
-            "Training/3-Technical-Writing/Conclusion.md",
             ]},
 
         {"Module 4: Electric Motor Systems" = [
-            "Training/4-Electric-Motor-Systems/Introduction.md",
+            "Training/4-Electric-Motor-Systems/index.md",
             "Training/4-Electric-Motor-Systems/Electric-Motors.md",
             "Training/4-Electric-Motor-Systems/Affinity-Laws.md",
             "Training/4-Electric-Motor-Systems/VFD.md",
             "Training/4-Electric-Motor-Systems/Pump.md",
             "Training/4-Electric-Motor-Systems/Belts-and-Transmission.md",
-            "Training/4-Electric-Motor-Systems/Conclusion.md",
             ]},
 
         {"Module 5: Compressed Air" = [
-            "Training/5-Compressed-Air/Introduction.md",
+            "Training/5-Compressed-Air/index.md",
             "Training/5-Compressed-Air/Pressure-and-Flow-Fundamentals.md",
             "Training/5-Compressed-Air/Air-Compressors.md",
             "Training/5-Compressed-Air/Distribution.md",
             "Training/5-Compressed-Air/End-Uses.md",
-            "Training/5-Compressed-Air/Conclusion.md",
             ]},
 
     ]}, 
