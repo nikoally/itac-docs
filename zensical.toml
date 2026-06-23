@@ -197,9 +197,6 @@ nav = [
             "handbook/remote-work.md",
             "handbook/client-confidentiality.md",
             "handbook/reporting-integrity.md",
-            ]},
-        {"Onsite Assessments" = [
-            "handbook/onsite-assessments/index.md",
             "handbook/safety-expectations.md",
             ]},
         {"Getting Paid" = [
