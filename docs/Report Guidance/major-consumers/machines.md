@@ -21,9 +21,7 @@ Controls and schedule matter here as everywhere: how production is scheduled (sh
 
 ## Anchor value
 
-The anchor is an estimated electrical load for the machines as a group, stated as either a connected load or an operating load, that ties back to the facility's billed electricity. Because machines are usually the largest consumer, this estimate is the backbone of the energy balance described on the [overview page](index.md#treat-the-summary-table-as-an-energy-balance): if the machine load is wrong, the whole table fails to reconcile.
-
-State the basis explicitly. A connected load summed from nameplates is not the same as an operating load that accounts for duty cycle and diversity, and the reader needs to know which one the number is. If you report connected load, note that actual draw is lower; if you report operating load, note how the duty and diversity were estimated.
+The anchor is an estimated electrical load for the machines as a group, stated as either a connected load or an operating load, that ties back to the facility's billed electricity. Because of the sheer number of unique machines and variance in operating schedules, this is typically difficult to determine from nameplates. Thus, we typically calculate the other consumers first, then attribute the remaining electrical load to production machines. 
 
 ## Body versus appendix
 
@@ -33,7 +31,7 @@ Appendix: drill into a specific machine only when a recommendation touches it. I
 
 ## Appendix contents
 
-The group electrical load quoted in the body is *built up* in the appendix from the machines that matter, not asserted as a round number. The appendix table is the worksheet that turns connected nameplate loads into the operating-load estimate, applying duty cycle and diversity, and the totals row is what must reconcile against billed electricity. Unlike lighting or HVAC, this is not an exhaustive inventory: list the heavy hitters that make up the bulk of the load and any machine a recommendation later acts on, not every machine on the floor. Before the section is "done," the appendix must contain:
+ Unlike lighting or HVAC, this is not an exhaustive inventory: list the heavy hitters that make up the bulk of the load and any machine a recommendation later acts on, not every machine on the floor. Before the section is "done," the appendix must contain:
 
 - A table of the major load contributors and any recommendation-relevant machines, with connected load, the duty/diversity assumptions applied, and the resulting operating-load estimate.
 
@@ -41,19 +39,33 @@ The group electrical load quoted in the body is *built up* in the appendix from 
 
 - The basis stated per row: nameplate connected load versus measured or estimated operating load.
 
+The total of the appendix table will almost certainly not equal the estimated energy intensity number obtained by subtraction. This is to be expected. Discuss the discrepancy in the appendix. The most usual case is that the table underestimates the energy intensity. In this case the simple explanation is that several less-major consumers weren't included in the analysis. 
+
 ### Table template
 
-One row per machine or machine group; close with the group estimate.
+One row per machine or machine group; close with the group estimate. The first tab is the rendered Markdown table; the second is the `booktabs` LaTeX for dropping straight into the appendix.
 
-| Equipment / Machine | Process Step | Qty | Connected Load (hp / kW) | Duty Cycle / Load Factor | Operating Hours (hrs/yr) | Est. Operating Load (kW) | Basis |
-|---|---|---|---|---|---|---|---|
-| *(major load contributors…)* | | | | | | | |
-| **Group estimated load** | | | | | | *(kW)* | |
+=== "Rendered"
 
-## Watch for
+    | Equipment / Machine | Qty | Duty Cycle / Load Factor | Operating Hours (hrs/yr) | Connected Load (kW) |
+    |---|---|---|---|---|
+    | *(major load contributors…)* | | | | |
+    | **Group estimated load** | | | | |
 
-- Connected load is not operating load. Summing nameplates overstates actual draw. State which one you are reporting and how diversity and duty were handled.
+=== "LaTeX"
 
-- The machine estimate is the reconciliation backbone. If billed electricity and the summed intensities do not line up, the machine load is the first estimate to revisit.
-
-- Resist inventorying. The body is a process picture, not a parts list. Hold equipment detail for the appendix, and only where a recommendation needs it.
+    ``` latex
+    \begin{table}[h]
+      \centering
+      \caption{Major Machine Load Contributors}
+      \begin{tabular}{lcccc}
+        \toprule
+        Equipment / Machine & Qty & Duty Cycle / Load Factor & Operating Hours (hrs/yr) & Connected Load (kW) \\
+        \midrule
+        % major load contributors…
+        \midrule
+        \textbf{Group estimated load} & & & & \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+    ```
