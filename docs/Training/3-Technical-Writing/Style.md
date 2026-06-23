@@ -43,7 +43,7 @@ Report calculated values to a precision that reflects the accuracy of your input
 
 **Avoid false precision.** If your operating hours estimate is ±10%, reporting annual savings to the nearest kilowatt-hour is misleading.
 
-!!! Exception
+!!! note "Exception"
 
     Using significant figures is ideal. However, we often don't know the accuracy of our measurements as they come from un-calibrated devices. In these cases, it's acceptable to report numbers to a reasonable precision. This is usually the nearest kWh, USD, 0.1 kW, or 0.1 MMBtu. 
 

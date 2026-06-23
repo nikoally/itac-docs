@@ -16,7 +16,7 @@ $$\text{Simple Payback} = \frac{\text{Implementation Cost} - \text{Incentives}}{
 
 Simple payback is easy to calculate and easy to communicate. However, it treats a dollar saved in year 1 the same as a dollar saved in year 10, which ignores economic reality.
 
-!!! info "When Simple Payback Works"
+!!! note "When Simple Payback Works"
 
     Simple payback assumes constant annual savings. When annual savings are constant, simple payback equals standard payback period (discussed below). The formula above is a shortcut that only works for even cash flows.
 
@@ -103,7 +103,7 @@ For these projects, the simple payback formula does not apply because annual cas
 
 When we encounter these large projects, we may go a step further and calculate standard payback period or discounted payback period using our analysis software. These methods properly account for uneven cash flows and, in the case of discounted payback, the time value of money over long horizons where discounting significantly affects the analysis.
 
-!!! info "ITAC Database Limitations"
+!!! note "ITAC Database Limitations"
 
     We are not permitted to report discounted payback or standard payback (with varying cash flows) in the ITAC database. If we calculate these metrics for complex projects, they appear in the text of the Costs and Payback section of the recommendation, not in any summary tables.
 

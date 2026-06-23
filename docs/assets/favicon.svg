@@ -1,0 +1,12 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="itacBlue" gradientUnits="userSpaceOnUse" x1="20" y1="20" x2="80" y2="80">
+      <stop offset="0" stop-color="#013ecd"></stop>
+      <stop offset="1" stop-color="#00a6fb"></stop>
+    </linearGradient>
+  </defs>
+  <g transform="translate(48 48) scale(1.33) translate(-50 -46.49)">
+    <path d="M30.72 72.98 A30 30 0 1 1 69.28 72.98" fill="none" stroke="url(#itacBlue)" stroke-width="9" stroke-linecap="round"></path>
+    <path d="M55.95 27.37 L39.28 53.57 L48.81 53.57 L44.05 72.63 L60.72 44.05 L52.38 44.05 Z" fill="url(#itacBlue)"></path>
+  </g>
+</svg>

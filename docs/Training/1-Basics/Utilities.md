@@ -28,7 +28,7 @@ Demand charges are based on peak power draw, measured in kilowatts (kW). The uti
 
     $$450 \text{ kW} \times \$12/\text{kW} = \$5{,}400$$
 
-!!! info "Why Demand Charges Matter"
+!!! note "Why Demand Charges Matter"
 
     Two facilities with identical annual kWh consumption can have vastly different electricity costs if their load profiles differ. A facility that runs steady loads around the clock will have lower demand charges than one that concentrates its electricity use into short periods.
 
@@ -62,7 +62,7 @@ Electricity charges are typically broken into functional components: supply, tra
 
 **Transmission charges** cover high-voltage transport from generating stations to local distribution networks. **Distribution charges** cover the local infrastructure that delivers power to individual facilities. These two components are often grouped together as "delivery" charges, since both represent the cost of moving electricity from source to end user.
 
-!!! info "Calculating Total Rates"
+!!! note "Calculating Total Rates"
 
     When calculating savings, pay attention to which rate components apply to consumption versus demand. Supply charges are typically consumption-based (per kWh), while delivery charges may include both consumption and demand components. The total effective rate per kWh saved or per kW reduced depends on how these components stack up.
 
@@ -78,7 +78,7 @@ Some commercial tariffs include power factor penalties or billing adjustments. P
 
 Natural gas billing is generally simpler than electricity. There are no demand charges for most commercial accounts; you pay for the volume consumed.
 
-!!! info "Common Natural Gas Units"
+!!! note "Common Natural Gas Units"
 
     Natural gas is most commonly billed in CCF (hundreds of cubic feet). You may also see billing in therms, MCF (thousands of cubic feet), or dekatherms depending on account size and utility conventions.
 
@@ -93,7 +93,7 @@ Facilities without natural gas service often rely on fuel oil or propane for hea
 
 Rather than monthly bills based on metered consumption, facilities purchase fuel oil and propane in bulk deliveries that fill on-site storage tanks. Deliveries might occur monthly during heating season or only a few times per year depending on consumption and tank capacity. This means you won't find a neat monthly billing record the way you would for electricity or natural gas.
 
-!!! info "Energy Content of Delivered Fuels"
+!!! note "Energy Content of Delivered Fuels"
 
     Fuel oil and propane are typically priced per gallon. For energy comparisons, you can convert to MMBtu using standard heating values:
 

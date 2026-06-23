@@ -8,7 +8,7 @@ A **retrofit** replaces working equipment before the end of its useful life. The
 
 The economic question for a retrofit is straightforward: does the value of energy savings justify abandoning the existing investment?
 
-!!! info "Common Retrofits"
+!!! note "Common Retrofits"
 
     - Replacing functional T8 fluorescent fixtures with LED
     - Installing VFDs on constant-speed motors that still work
@@ -26,7 +26,7 @@ A **lost-opportunity** recommendation coincides with a moment when the facility 
 
 The economic question for a lost-opportunity is different: given that you are already spending money, does the incremental efficiency cost justify the savings?
 
-!!! info "Common Lost-Opportunities"
+!!! note "Common Lost-Opportunities"
 
     - Specifying a premium-efficiency motor when replacing a failed motor
     - Installing LED fixtures in new construction instead of standard fluorescent

@@ -50,6 +50,10 @@ Key conventions:
 2. Add it to the `nav` list in `zensical.toml` — otherwise it will not appear in the site.
 3. Images go in `docs/assets/` (or a `ReferencePhotos/` subfolder); reference with relative paths.
 
+### Section Index (Landing) Pages
+
+To give a nav section its own clickable landing/overview page (the `navigation.indexes` feature), the page **must be named `index.md` and live in a subfolder named for the section** — a distinctly-named flat file (e.g. `onboarding.md`) does **not** work as a section index. List that `index.md` as the first entry in the section's `nav` list. Example: `docs/handbook/onboarding/index.md` is the landing for the Onboarding section, with the rest of the section's pages remaining flat siblings in `docs/handbook/`. Because the index lives one level deeper than its sibling pages, its relative links to them need a `../` prefix (e.g. `../getting-started.md`). Give landing pages `hide: - toc` frontmatter. See `docs/handbook/*/index.md` and `docs/Report Guidance/major-consumers/index.md` for examples.
+
 ## Recommendation Page Style Guide
 
 ### Page Structure

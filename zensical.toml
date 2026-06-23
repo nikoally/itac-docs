@@ -112,48 +112,43 @@ nav = [
 
     {"Training" = [
         {"Module 1: Power and Energy Fundamentals" = [
-            "Training/1-Basics/Introduction.md",
+            "Training/1-Basics/index.md",
             "Training/1-Basics/Power-and-Energy.md",
             "Training/1-Basics/AC-Power.md",
             "Training/1-Basics/Utilities.md",
-            "Training/1-Basics/Conclusion.md",
             ]},
 
         {"Module 2: Engineering Economics" = [
-            "Training/2-Engineering-Economics/Introduction.md",
+            "Training/2-Engineering-Economics/index.md",
             "Training/2-Engineering-Economics/Cash-Flows.md",
             "Training/2-Engineering-Economics/TVM-and-NPV.md",
             "Training/2-Engineering-Economics/Payback.md",
             "Training/2-Engineering-Economics/Lost-Opportunity-vs-Retrofit.md",
-            "Training/2-Engineering-Economics/Conclusion.md",
             ]},
 
         {"Module 3: Technical Writing" = [
-            "Training/3-Technical-Writing/Introduction.md",
+            "Training/3-Technical-Writing/index.md",
             "Training/3-Technical-Writing/Technical-Writing.md",
             "Training/3-Technical-Writing/Graphs.md",
             "Training/3-Technical-Writing/Style.md",
             "Training/3-Technical-Writing/LaTeX.md",
-            "Training/3-Technical-Writing/Conclusion.md",
             ]},
 
         {"Module 4: Electric Motor Systems" = [
-            "Training/4-Electric-Motor-Systems/Introduction.md",
+            "Training/4-Electric-Motor-Systems/index.md",
             "Training/4-Electric-Motor-Systems/Electric-Motors.md",
             "Training/4-Electric-Motor-Systems/Affinity-Laws.md",
             "Training/4-Electric-Motor-Systems/VFD.md",
             "Training/4-Electric-Motor-Systems/Pump.md",
             "Training/4-Electric-Motor-Systems/Belts-and-Transmission.md",
-            "Training/4-Electric-Motor-Systems/Conclusion.md",
             ]},
 
         {"Module 5: Compressed Air" = [
-            "Training/5-Compressed-Air/Introduction.md",
+            "Training/5-Compressed-Air/index.md",
             "Training/5-Compressed-Air/Pressure-and-Flow-Fundamentals.md",
             "Training/5-Compressed-Air/Air-Compressors.md",
             "Training/5-Compressed-Air/Distribution.md",
             "Training/5-Compressed-Air/End-Uses.md",
-            "Training/5-Compressed-Air/Conclusion.md",
             ]},
 
     ]}, 
@@ -188,12 +183,14 @@ nav = [
 
     {"Student Handbook" = [
         {"Onboarding" = [
+            "handbook/onboarding/index.md",
             "handbook/getting-started.md",
             "handbook/required-trainings.md",
             "handbook/apparel.md",
             "handbook/ipad.md",
             ]},
         {"Expectations" = [
+            "handbook/expectations/index.md",
             "handbook/code-of-conduct.md",
             "handbook/attendance.md",
             "handbook/dress-code.md",
@@ -202,13 +199,16 @@ nav = [
             "handbook/reporting-integrity.md",
             ]},
         {"Onsite Assessments" = [
+            "handbook/onsite-assessments/index.md",
             "handbook/safety-expectations.md",
             ]},
         {"Getting Paid" = [
+            "handbook/getting-paid/index.md",
             "handbook/entering-hours.md",
             "handbook/mileage-reimbursement.md",
             ]},
         {"Advancement" = [
+            "handbook/advancement/index.md",
             "handbook/promotion.md",
             "handbook/certificate.md",
             ]},
@@ -259,7 +259,15 @@ custom_dir = "overrides"
 # - https://zensical.org/docs/setup/logo-and-icons/#favicon
 # - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 #
-#favicon = "assets/images/favicon.png"
+favicon = "assets/favicon.svg"
+
+# With the "logo" option you can set your own image to use as the logo shown
+# in the header. The path provided must be relative to the "docs_dir".
+#
+# Read more:
+# - https://zensical.org/docs/setup/logo-and-icons/#logo
+#
+logo = "assets/favicon.svg"
 
 # Zensical supports more than 60 different languages. This means that the
 # labels and tooltips that Zensical's templates produce are translated.
@@ -423,10 +431,30 @@ features = [
 # Read more:
 # - https://zensical.org/docs/setup/colors/
 # ----------------------------------------------------------------------------
+# Brand colors are "custom" — the cobalt palette is defined as --md-* CSS
+# variables per scheme in docs/assets/stylesheets/extra.css.
+# The three blocks below follow the OS preference automatically and expose a
+# header toggle that cycles: system → light → dark.
 [[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
 scheme = "slate"
-primary = "indigo"
-accent = "indigo"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
 
 # ----------------------------------------------------------------------------
 # In the "font" subsection you can configure the fonts used. By default, fonts
@@ -434,9 +462,9 @@ accent = "indigo"
 # of suitably licensed fonts. There are options for a normal text font and for
 # a monospaced font used in code blocks.
 # ----------------------------------------------------------------------------
-#[project.theme.font]
-#text = "Inter"
-#code = "Jetbrains Mono"
+[project.theme.font]
+text = "Noto Sans"
+code = "Noto Sans Mono"
 
 # ----------------------------------------------------------------------------
 # You can configure your own logo to be shown in the header using the "logo"
