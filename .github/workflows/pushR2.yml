@@ -20,4 +20,4 @@ jobs:
             --exclude "assets/*" \
             --exclude "calculators/*" \
             --exclude "plotme/*" \
-            --exclude "*.DS_Store"
+            --exclude "*.DS_Store" \
