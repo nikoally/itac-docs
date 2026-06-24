@@ -1,0 +1,19 @@
+name: Sync to R2
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync docs to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+        run: |
+          aws s3 sync ./docs s3://itac-docs \
+            --endpoint-url https://fc74fe36b97c996d99c13b7c9696d460.r2.cloudflarestorage.com \
+            --delete
