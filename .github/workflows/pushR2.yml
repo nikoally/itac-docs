@@ -17,3 +17,7 @@ jobs:
           aws s3 sync ./docs s3://itac-docs \
             --endpoint-url https://fc74fe36b97c996d99c13b7c9696d460.r2.cloudflarestorage.com \
             --delete
+            --exclude "assets/*" \
+            --exclude "calculators/*" \
+            --exclude "plotme/*" \
+            --exclude "*.DS_Store"
