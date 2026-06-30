@@ -13,7 +13,15 @@ edit_uri = "edit/main/docs/"
 
 extra_javascript = [
     "javascripts/mathjax.js",
-    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"
+    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
+    # Site-wide helpers (must load before the per-calculator scripts below)
+    "assets/javascript/extra.js",
+    # Calculator scripts — moved out of the Markdown so they re-run on every
+    # instant-navigation load via the document$ observable
+    "assets/javascript/vsd-efficiency.js",
+    "assets/javascript/heat-recovery.js",
+    "assets/javascript/cold-intake.js",
+    "assets/javascript/leak-rate.js"
 ]
 
 
