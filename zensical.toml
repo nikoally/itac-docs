@@ -500,6 +500,10 @@ code = "Noto Sans Mono"
 [project.extra]
 generator = false
 
+[project.extra.analytics]
+provider = "google"
+property = "G-BXC3E8LE0B"
+
 [project.markdown_extensions.pymdownx.arithmatex]
 generic = true
 
