@@ -5,6 +5,9 @@ This section contains guides for hardware setup and configuration. We will be us
 For more details, navigate to the manufacturers site: 
 https://www.onsetcomp.com/products/software/hoboconnect
 
+
+We deploy analog sensors to evaluate energy systems of a facility during normal working hours.
+
 ## Module Objectives
 
 - Prepare to deploy sensors and data loggers at site visits
