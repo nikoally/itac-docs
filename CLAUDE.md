@@ -54,6 +54,30 @@ Key conventions:
 
 To give a nav section its own clickable landing/overview page (the `navigation.indexes` feature), the page **must be named `index.md` and live in a subfolder named for the section** — a distinctly-named flat file (e.g. `onboarding.md`) does **not** work as a section index. List that `index.md` as the first entry in the section's `nav` list. Example: `docs/handbook/onboarding/index.md` is the landing for the Onboarding section, with the rest of the section's pages remaining flat siblings in `docs/handbook/`. Because the index lives one level deeper than its sibling pages, its relative links to them need a `../` prefix (e.g. `../getting-started.md`). Give landing pages `hide: - toc` frontmatter. See `docs/handbook/*/index.md` and `docs/Report Guidance/major-consumers/index.md` for examples.
 
+### Card Grids
+
+Use Zensical's native **card grid** for a "menu" of tappable cards (e.g. conversation starters, feature callouts) — do **not** hand-roll cards with custom `<div>`/CSS. Syntax (docs: https://zensical.org/docs/authoring/grids/): wrap a Markdown list in `<div class="grid cards" markdown>`, with each list item as `__Title__`, then a `---` separator, then the body text:
+
+```
+<div class="grid cards" markdown>
+
+-   __Walk me through your process__
+
+    ---
+
+    How does material come in, what happens to it, and how does it leave?
+
+-   __Tell me about your schedule__
+
+    ---
+
+    Shifts, production hours vs. equipment hours, shutdowns.
+
+</div>
+```
+
+This requires the `attr_list` **and** `md_in_html` markdown extensions in `zensical.toml` (both are enabled under `[project.markdown_extensions.*]`). The theme ships the `.grid.cards` styling, so no custom CSS is needed. Material **icon shortcodes** (`:material-…:`) inside cards will **not** render unless the `pymdownx.emoji` extension is enabled — it currently is not, so omit icons or enable that extension first. See `docs/Report Guidance/pre-assessment-meeting.md` for a working example.
+
 ## Recommendation Page Style Guide
 
 ### Page Structure
