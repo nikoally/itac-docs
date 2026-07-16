@@ -27,32 +27,20 @@
   box-shadow: none !important;
 }
 
+/* Tabs are a desktop-only feature (the base theme hides them below 76.25em).
+   We no longer force them visible on mobile — mobile uses the normal Material
+   layout: the header + the slide-out navigation drawer (opened by the
+   hamburger). On desktop the tabs remain, but scroll away with the page
+   rather than sticking (the header stays pinned). */
 .md-tabs {
   position: -webkit-sticky;
   position: relative !important; /* Not sticky, scrolls with page */
   top: 0px;
   z-index: 30;
   width: 100%;
-  display: block !important;
-  visibility: visible !important;
-  height: auto !important;
-  background-color: transparent;
 }
 
-/* 3. FORCE LINKS TO DISPLAY */
-.md-tabs__list {
-  display: flex !important;
-  margin: 0 !important;
-  padding: 0 16px;
-  overflow-x: auto;
-  white-space: nowrap;
-  scrollbar-width: none;
-}
-.md-tabs__list::-webkit-scrollbar { display: none; }
-.md-tabs__item { display: block !important; }
-.md-tabs__link { display: block !important; padding: 5px 16px; }
-
-/* 4. CONTENT SPACING */
+/* 3. CONTENT SPACING */
 .md-main {
   padding-top: 10px !important;
 }
@@ -60,7 +48,7 @@
   .md-main__inner { padding-top: 0 !important; margin-top: 0 !important; }
 }
 
-/* 5. ACCESSIBILITY */
+/* 4. ACCESSIBILITY */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -164,25 +152,15 @@
 }
 
 /* ==========================================================================
-   HEADER & TABS — frosted-glass background (page color faintly shows through,
-   blurred), cobalt tab accents. The divider is left to the base theme
-   (line under the tabs at top, under the header when scrolled). The frosted
-   blur no longer buries tooltips (lifted to z-index 50 below) or the divider
-   (handled by the base theme's scroll transition).
-
-   Fill opacity is 85% (one knob — tune the color-mix percentage below). On
-   mobile the header and the tabs are two separate bars, and the navigation
-   drawer slides in *underneath* both of them. At a very low fill (the old 20%)
-   each bar showed whatever sat behind it: the header sat over the drawer's dark
-   logo/title block while the tabs sat over lighter drawer content, so the two
-   identically-styled bars read as mismatched panes of glass. A higher fill
-   keeps a subtle frost while making both bars read as one consistent surface.
+   HEADER & TABS — solid, opaque backgrounds (clearer than a translucent frost,
+   and consistent regardless of what scrolls behind them), cobalt tab accents.
+   Backgrounds and the bottom divider are set per-scheme below. No
+   backdrop-filter, so nothing behind the bars bleeds through.
    ========================================================================== */
 .md-header,
 .md-tabs {
-  background-color: color-mix(in srgb, var(--md-default-bg-color) 85%, transparent) !important;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 /* Keep Material tooltips above the sticky header (z-index 40) and tabs */
@@ -193,7 +171,9 @@
 
 [data-md-color-scheme="default"] .md-header,
 [data-md-color-scheme="default"] .md-tabs {
+  background-color: var(--itac-white) !important;
   color: var(--itac-ink) !important;
+  border-bottom: 1px solid var(--itac-gray-300);
 }
 [data-md-color-scheme="default"] .md-tabs__link {
   color: var(--itac-gray-700) !important;
@@ -211,7 +191,9 @@
 
 [data-md-color-scheme="slate"] .md-header,
 [data-md-color-scheme="slate"] .md-tabs {
+  background-color: var(--itac-ink) !important;
   color: var(--itac-offwhite) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 [data-md-color-scheme="slate"] .md-tabs__link {
   color: rgba(250, 251, 252, 0.7) !important;
