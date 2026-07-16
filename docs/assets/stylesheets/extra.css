@@ -191,7 +191,9 @@
 
 [data-md-color-scheme="slate"] .md-header,
 [data-md-color-scheme="slate"] .md-tabs {
-  background-color: var(--itac-ink) !important;
+  /* Neutral slate surface, lifted slightly above the page background — NOT the
+     brand navy (--itac-ink), which is saturated enough to read as "blue" here. */
+  background-color: hsl(222, 16%, 11%) !important;
   color: var(--itac-offwhite) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
