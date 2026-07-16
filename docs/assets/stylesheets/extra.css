@@ -2,9 +2,16 @@
    ZENSICAL CUSTOM STYLES (INTEGRATED)
    ========================================================================== */
 
-/* 1. HIDE HAMBURGER MENU */
-.md-header__button[for="__drawer"] {
-  display: none !important;
+/* 1. HIDE HAMBURGER MENU (desktop only)
+   The hamburger is the ONLY control that opens the primary navigation drawer
+   (the sidebar) on mobile. The base theme already hides it above 76.25em,
+   where the sidebar + tabs are shown persistently. Scoping this rule to the
+   same breakpoint keeps the header clean on desktop while leaving the drawer
+   toggle — and therefore the sidebar — reachable on mobile. */
+@media screen and (min-width: 76.25em) {
+  .md-header__button[for="__drawer"] {
+    display: none !important;
+  }
 }
 
 /* 2. DYNAMIC HEADER & TABS SETUP */
