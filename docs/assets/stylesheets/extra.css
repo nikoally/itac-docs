@@ -164,15 +164,23 @@
 }
 
 /* ==========================================================================
-   HEADER & TABS — translucent frosted-glass background (page color shows
-   through, blurred), cobalt tab accents. The divider is left to the base theme
+   HEADER & TABS — frosted-glass background (page color faintly shows through,
+   blurred), cobalt tab accents. The divider is left to the base theme
    (line under the tabs at top, under the header when scrolled). The frosted
    blur no longer buries tooltips (lifted to z-index 50 below) or the divider
    (handled by the base theme's scroll transition).
+
+   Fill opacity is 85% (one knob — tune the color-mix percentage below). On
+   mobile the header and the tabs are two separate bars, and the navigation
+   drawer slides in *underneath* both of them. At a very low fill (the old 20%)
+   each bar showed whatever sat behind it: the header sat over the drawer's dark
+   logo/title block while the tabs sat over lighter drawer content, so the two
+   identically-styled bars read as mismatched panes of glass. A higher fill
+   keeps a subtle frost while making both bars read as one consistent surface.
    ========================================================================== */
 .md-header,
 .md-tabs {
-  background-color: color-mix(in srgb, var(--md-default-bg-color) 20%, transparent) !important;
+  background-color: color-mix(in srgb, var(--md-default-bg-color) 85%, transparent) !important;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
