@@ -2,10 +2,7 @@
    ZENSICAL CUSTOM STYLES (INTEGRATED)
    ========================================================================== */
 
-/* 1. HIDE HAMBURGER MENU */
-.md-header__button[for="__drawer"] {
-  display: none !important;
-}
+
 
 /* 2. DYNAMIC HEADER & TABS SETUP */
 .md-header,
@@ -44,6 +41,26 @@
 .md-tabs__list::-webkit-scrollbar { display: none; }
 .md-tabs__item { display: block !important; }
 .md-tabs__link { display: block !important; padding: 5px 16px; }
+
+/* The forced display above overrides the base theme's mobile hide rule, so
+   the tab bar leaks onto small screens. Re-hide it below the theme's tabs
+   breakpoint (76.1875em). */
+@media screen and (max-width: 76.1875em) {
+  .md-tabs {
+    display: none !important;
+  }
+  /* Hide the "itac-docs" title text on mobile; keep the header bar itself so
+     the hamburger menu and search icon stay accessible. */
+  .md-header__title {
+    display: none !important;
+  }
+  /* Lift the open nav drawer above the sticky, translucent header (z-index 40)
+     so its logo + site-title banner renders cleanly on top instead of bleeding
+     through the frosted header. */
+  .md-sidebar--primary {
+    z-index: 45 !important;
+  }
+}
 
 /* 4. CONTENT SPACING */
 .md-main {
