@@ -167,8 +167,10 @@ nav = [
         "calculators/heat-recovery.md",
     ]},
 
-    {"PlotME" = [
-        "plotme/index.md",
+    {"Hardware" = [
+        "hardware/index.md",
+        "hardware/mx100.md",
+        "hardware/mx1104.md"
     ]},
 
     {"Report Guidance" = [
