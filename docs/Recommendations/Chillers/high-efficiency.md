@@ -72,44 +72,4 @@ where:
 
 **Installation:** Budget for rigging and crane time to remove the old chiller and set the new one, refrigerant charge, piping and electrical reconnection, controls integration, and commissioning. Costs vary significantly with chiller location (rooftop vs. mechanical room) and accessibility.
 
-Many utilities offer prescriptive or custom rebates for high-efficiency chiller replacements. Check with the local utility for current offerings, required IPLV thresholds, and pre-approval requirements before finalizing cost estimates.
-
-## Report Requirements
-
-In addition to the [typical report requirements](../how-to.md) and the recommendation-specific savings and costs, the recommendation should include a table documenting the chiller(s) being replaced. The table should follow this structure:
-
-- **Column 1:** Chiller ID or location description
-
-- **Column 2:** Rated capacity (tons)
-
-- **Column 3:** Baseline IPLV (kW/ton)
-
-- **Column 4:** New IPLV (kW/ton)
-
-- **Column 5:** Load factor (decimal)
-
-- **Column 6:** Annual operating hours (hrs/yr)
-
-- **Column 7:** Annual energy savings (kWh/yr)
-
-- **Column 8:** Annual demand savings (kW-months)
-
-If multiple chillers are being replaced, include a totals row at the bottom.
-
-```latex
-\begin{table}[H]
-\centering
-\caption{High Efficiency Chiller Replacement Summary}
-\label{tab:high-eff-chillers}
-\begin{tabular}{lcccccccc}
-\toprule
-Chiller Location & Capacity (tons) & Baseline IPLV & New IPLV & Load Factor & Operating Hours & Energy Savings & Demand Savings \\
- & & (kW/ton) & (kW/ton) & & (hrs/yr) & (kWh/yr) & (kW-months) \\
-\midrule
-Chiller 1 & & & & & & & \\
-\midrule
-\textbf{Total} & \textbf{} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{--} & \textbf{} & \textbf{} \\
-\bottomrule
-\end{tabular}
-\end{table}
-```
+Many utilities offer prescriptive or custom rebates for high-efficiency chiller replacements. Check with the local utility for current offerings, required IPLV thresholds before finalizing cost estimates.
