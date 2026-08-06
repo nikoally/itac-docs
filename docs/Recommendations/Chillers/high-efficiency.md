@@ -59,12 +59,12 @@ $$
 
 where:
 
-- $\text{CF}_{\text{summer}}$ = summer coincidence factor (1.0 for chillers serving comfort or process cooling that operate during summer billing months)
+- $\text{CF}_{\text{summer}}$ = summer coincidence factor (0.70)
 
-- $\text{CF}_{\text{winter}}$ = winter coincidence factor (0 for comfort-cooling-only chillers that are shut down in winter; 1.0 for process chillers that run year-round)
+- $\text{CF}_{\text{winter}}$ = winter coincidence factor (0.03 for space-conditioning chillers; 0.70 for chillers serving a year-round process load)
 
 ??? note "Determining the winter coincidence factor"
-    Whether $\text{CF}_{\text{winter}}$ is 0 or 1.0 depends entirely on the chiller's duty. A chiller serving only comfort cooling is typically idle outside the summer billing months, so its winter demand savings are zero. A chiller serving a year-round process load (e.g., cooling injection molds or process water) runs in winter too, so the full instantaneous demand reduction should be carried into both terms. Confirm the duty cycle with facility staff before assuming either value.
+    Whether $\text{CF}_{\text{winter}}$ is 0.03 or 0.70 depends on the chiller's duty. A chiller serving space conditioning is largely idle outside the summer billing months, so its winter coincidence factor is 0.03. A chiller serving a year-round process load (e.g., cooling injection molds or process water) runs in winter too, so it carries the same 0.70 coincidence factor in both terms. Confirm the duty cycle with facility staff before assuming either value.
 
 ## Anticipated Costs
 

@@ -41,7 +41,7 @@ where:
 
 - $\text{tons}_i$ = cooling delivered by chiller $i$ at that point (tons)
 
-This figure is compressor-only. The chilled-water and condenser-water pumps and the cooling-tower fans are real cooling-plant load, but they are reported on their own lines (see the pump-motor inventory in the appendix), not folded into the chiller kW/ton.
+This figure is compressor-only. The chilled-water and condenser-water pumps and the cooling-tower fans are real cooling-plant load, but they are reported on their own lines, not folded into the chiller kW/ton.
 
 ## The boundary with HVAC
 
@@ -60,8 +60,6 @@ The total tonnage and the kW/ton anchor quoted in the body come *out of* the app
 - A per-chiller table with nameplate data, the full- and part-load efficiency figures, and a totals row giving summed tonnage (the body's capacity anchor).
 
 - The part-load efficiency curves or IPLV/IEER points behind the kW/ton anchor, with the basis stated (nameplate versus measured).
-
-- A pump-motor and cooling-tower-fan inventory as its own load line — the chilled-water and condenser-water pumps and the tower fans are real cooling-plant load (and the tower is a water user in its own right), not part of the chiller nameplate. Capture nameplate power, rated efficiency, and estimated load factor per motor so the auxiliary load can be reconstructed.
 
 ### Table template
 
