@@ -61,11 +61,11 @@ The total tonnage and the kW/ton anchor quoted in the body come *out of* the app
 
 - The part-load efficiency curves or IPLV/IEER points behind the kW/ton anchor, with the basis stated (nameplate versus measured).
 
-- A pump-motor and cooling-tower-fan inventory as its own load line — the chilled-water and condenser-water pumps and the tower fans are real cooling-plant load (and the tower is a water user in its own right), not part of the chiller nameplate. Capture nameplate power, rated efficiency, and estimated load factor per motor so the auxiliary load can be reconstructed (see the template below).
+- A pump-motor and cooling-tower-fan inventory as its own load line — the chilled-water and condenser-water pumps and the tower fans are real cooling-plant load (and the tower is a water user in its own right), not part of the chiller nameplate. Capture nameplate power, rated efficiency, and estimated load factor per motor so the auxiliary load can be reconstructed.
 
 ### Table template
 
-Two tables: a per-chiller attribute table and a pump-motor inventory. For each, the first tab is the rendered Markdown table; the second is the `booktabs` LaTeX for dropping straight into the appendix.
+The per-chiller attribute table below: the first tab is the rendered Markdown table; the second is the `booktabs` LaTeX for dropping straight into the appendix.
 
 **Chiller data** — columns are individual chillers and rows are attributes; chillers carry enough per-unit detail (and part-load curves) that the per-unit-as-column layout keeps each unit's data together:
 
@@ -102,33 +102,6 @@ Two tables: a per-chiller attribute table and a pump-motor inventory. For each, 
         Full-load efficiency (kW/ton) & & \\
         Part-load efficiency (kW/ton or IPLV) & & \\
         Operating schedule & & \\
-        \bottomrule
-      \end{tabular}
-    \end{table}
-    ```
-
-**Pump-motor and tower-fan inventory** — one row per motor, closing with a totals row for the estimated auxiliary load:
-
-=== "Rendered"
-
-    | Service / Loop | Qty | Nameplate Power (hp) | Rated Efficiency (%) | Estimated Load Factor | Operating Hours (hrs/yr) | Estimated Load (kW) |
-    |---|---|---|---|---|---|---|
-    | *(chilled-water pumps, condenser-water pumps, tower fans…)* | | | | | | |
-    | **Total auxiliary load** | | | | | | |
-
-=== "LaTeX"
-
-    ``` latex
-    \begin{table}[h]
-      \centering
-      \caption{Cooling-Plant Pump-Motor and Tower-Fan Inventory}
-      \begin{tabular}{lcccccc}
-        \toprule
-        Service / Loop & Qty & Nameplate Power (hp) & Rated Efficiency (\%) & Estimated Load Factor & Operating Hours (hrs/yr) & Estimated Load (kW) \\
-        \midrule
-        % chilled-water pumps, condenser-water pumps, tower fans…
-        \midrule
-        \textbf{Total auxiliary load} & & & & & & \\
         \bottomrule
       \end{tabular}
     \end{table}
