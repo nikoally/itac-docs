@@ -86,11 +86,14 @@ nav = [
         {"HVAC" = [
             "Recommendations/HVAC/hvac-retrofit.md",
             "Recommendations/HVAC/smart-thermostat.md",
+            "Recommendations/HVAC/exhaust-fan-vfd.md",
             "Recommendations/HVAC/hvac-maintenance.md",
+            "Recommendations/HVAC/condenser-coil-airflow.md",
             "Recommendations/HVAC/boiler-maintenance.md",
             ]},
         {"Boiler" = [
             "Recommendations/Boiler/condensing-heat-exchanger.md",
+            "Recommendations/Boiler/high-efficiency-boiler.md",
             "Recommendations/Boiler/reduce-excess-air.md",
             ]},
         {"Chillers" = [
@@ -192,35 +195,6 @@ nav = [
         "Report Guidance/utility-analysis.md",
     ]},
 
-    {"Student Handbook" = [
-        {"Onboarding" = [
-            "handbook/onboarding/index.md",
-            "handbook/getting-started.md",
-            "handbook/required-trainings.md",
-            "handbook/apparel.md",
-            "handbook/ipad.md",
-            ]},
-        {"Expectations" = [
-            "handbook/expectations/index.md",
-            "handbook/code-of-conduct.md",
-            "handbook/attendance.md",
-            "handbook/dress-code.md",
-            "handbook/remote-work.md",
-            "handbook/client-confidentiality.md",
-            "handbook/reporting-integrity.md",
-            "handbook/safety-expectations.md",
-            ]},
-        {"Getting Paid" = [
-            "handbook/getting-paid/index.md",
-            "handbook/entering-hours.md",
-            "handbook/mileage-reimbursement.md",
-            ]},
-        {"Advancement" = [
-            "handbook/advancement/index.md",
-            "handbook/promotion.md",
-            "handbook/certificate.md",
-            ]},
-    ]},
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize

@@ -77,7 +77,7 @@ The Inventory tab is where you enter data for each individual compressor in the 
 #### Nameplate Data
 
 ??? note "Finding Nameplate Data"
-    Nameplate data for site compressors is stored in **Airtable** under the site equipment records. Look up the facility and navigate to the compressor entries to find motor HP, full load amps, and motor service factor.
+    Find each compressor's motor horsepower, full-load amps, and service factor in the facility equipment records or on the equipment nameplate.
 
 ??? note "Finding CAGI Datasheets and Manufacturer Spec Sheets"
     CAGI datasheets are standardized performance documents published by compressor manufacturers. To locate one:

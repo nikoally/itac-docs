@@ -28,7 +28,6 @@ Key sections:
 - `docs/Training/` — Modular training content on energy assessment topics.
 - `docs/calculators/` — Interactive calculator pages (use Plotly/Chart.js for charts).
 - `docs/plotme/` — PlotME tool documentation.
-- `docs/handbook/` — Student handbook (onboarding, pay, advancement).
 - `docs/Report Guidance/` — Guidance for writing assessment reports.
 - `docs/assets/stylesheets/extra.css` — Site-wide custom CSS.
 
@@ -52,7 +51,7 @@ Key conventions:
 
 ### Section Index (Landing) Pages
 
-To give a nav section its own clickable landing/overview page (the `navigation.indexes` feature), the page **must be named `index.md` and live in a subfolder named for the section** — a distinctly-named flat file (e.g. `onboarding.md`) does **not** work as a section index. List that `index.md` as the first entry in the section's `nav` list. Example: `docs/handbook/onboarding/index.md` is the landing for the Onboarding section, with the rest of the section's pages remaining flat siblings in `docs/handbook/`. Because the index lives one level deeper than its sibling pages, its relative links to them need a `../` prefix (e.g. `../getting-started.md`). Give landing pages `hide: - toc` frontmatter. See `docs/handbook/*/index.md` and `docs/Report Guidance/major-consumers/index.md` for examples.
+To give a nav section its own clickable landing/overview page (the `navigation.indexes` feature), the page **must be named `index.md` and live in a subfolder named for the section**. List that `index.md` as the first entry in the section's `nav` list. Because the index lives one level deeper than sibling pages, its relative links to them need a `../` prefix. Give landing pages `hide: - toc` frontmatter. See `docs/Report Guidance/major-consumers/index.md` for an example.
 
 ### Card Grids
 

@@ -13,4 +13,4 @@ The LaTeX file contains the full list of several possible best practices as pre-
 
 ## How to Decide What to Keep
 
-If you are unsure whether a practice applies (i.e. you recall seeing something on the walkthrough but aren't certain), consult the other students who attended the assessment before including or removing that item. Only include practices that were **confirmed** for this facility. Do not leave in items simply because they seem plausible or common for the industry. Misrepresenting what the facility is currently doing undermines the credibility of the report. 
+If you are unsure whether a practice applies (i.e. you recall seeing something on the walkthrough but aren't certain), consult the other team members who attended the assessment before including or removing that item. Only include practices that were **confirmed** for this facility. Do not leave in items simply because they seem plausible or common for the industry. Misrepresenting what the facility is currently doing undermines the credibility of the report.
