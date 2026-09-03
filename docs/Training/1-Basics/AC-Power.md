@@ -6,103 +6,82 @@
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube-nocookie.com/embed/c9gm_NL7KyE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-Nearly all industrial facilities run on alternating current (AC) rather than direct current (DC). The practical reason is transmission efficiency: AC voltage can be stepped up or down using transformers, which allows utilities to transmit power at high voltages (reducing current and therefore line losses) and then step it down to usable levels at the facility. DC systems would require far more complex and expensive conversion equipment to achieve the same thing.
+Most industrial facilities receive alternating-current (AC) power. Transformers make it practical to raise AC voltage for transmission and lower it near the load. For a given power transfer, higher voltage allows lower current, reducing resistive losses in conductors.
 
-In an AC system, voltage and current oscillate sinusoidally. In the United States, this oscillation occurs at 60 Hz, meaning the waveform completes 60 full cycles per second. The voltage you measure with a standard multimeter is the root-mean-square (RMS) value, which represents the equivalent DC voltage that would deliver the same power to a resistive load.
+In the United States, utility AC has a nominal frequency of 60 Hz: 60 cycles each second. We will first consider sinusoidal voltage and current. Electronic loads can distort current waveforms; that matters when measuring real power and power factor.
 
 ## Single-Phase vs. Three-Phase Systems
 
-**Single-phase power** uses two conductors: one "hot" wire carrying the alternating voltage and one neutral wire that serves as the return path. This is what you find in most residential applications and powers things like lighting, small appliances, and office equipment. Single-phase power delivers energy in pulses, since the instantaneous power drops to zero twice per cycle (when the voltage crosses through zero).
+A **single-phase load** can be connected line-to-neutral or line-to-line. For example, a 120 V load often uses a hot conductor and neutral, while a 240 V single-phase load may use two hot conductors. These descriptions omit protective grounding conductors; they are not installation instructions.
 
-**Three-phase power** uses three hot conductors, each carrying an AC waveform that is offset by 120 degrees from the others. The main benefit of this is reduced vibration in the outputs of motors. Because the three phases are offset, their combined instantaneous power never drops to zero. Thus, they produce a smoother output. Since vibrations are one of the main causes of failures in manufacturing systems, it's much better for reliability. 
+**Three-phase power** uses three AC voltages separated by 120 electrical degrees. Balanced sinusoidal three-phase loads draw constant total instantaneous power, unlike a single-phase resistive load's pulsating power. Three-phase supply also produces a rotating magnetic field naturally suited to industrial motors.
 
-
-Three-phase systems can be configured as either **wye (Y)** or **delta (Δ)** connections. In a wye configuration, each phase connects between a line conductor and a common neutral point. In a delta configuration, each phase connects between two line conductors with no neutral. The choice affects the relationship between line voltage (measured between any two hot conductors) and phase voltage (measured across a single winding). In a wye system, line voltage equals phase voltage multiplied by √3 (approximately 1.732). In a delta system, line voltage equals phase voltage. 
-
-For ITAC assessments, you will most commonly encounter 480V three-phase delta systems for large motors and equipment, and 208V or 120/208V three-phase wye systems for smaller equipment and lighting.
-
-## AC Power
-
-When voltage and current are perfectly in phase (meaning they reach their peaks and zero crossings at the same instant), all the power delivered to the load does useful work. This is typical of purely resistive loads like electric heaters or incandescent lights.
-
-However, most industrial loads are not purely resistive. Motors, transformers, and fluorescent lighting ballasts contain inductive elements that cause current to lag behind voltage. Some electronic equipment contains capacitive elements that cause current to lead voltage. When voltage and current are out of phase, the power situation becomes more complicated.
-
-**Real power (P)** is measured in watts (W) or kilowatts (kW). This is the power that actually does useful work: turning motor shafts, producing heat, generating light. It is the power you ultimately pay for in terms of energy consumption (kWh).
-
-**Reactive power (Q)** is measured in volt-amperes reactive (VAR) or kilovolt-amperes reactive (kVAR). Reactive power represents energy that sloshes back and forth between the source and the load's magnetic or electric fields without doing useful work. An induction motor, for example, needs reactive power to establish its magnetic field, but this power simply oscillates in and out of the motor windings rather than turning the shaft.
-
-**Apparent power (S)** is measured in volt-amperes (VA) or kilovolt-amperes (kVA). This is the total power that the utility must supply and that the facility's wiring must carry. It represents the vector sum of real and reactive power:
-
-$$S = \sqrt{P^2 + Q^2}$$
-
-Alternatively, apparent power equals the product of RMS voltage and RMS current:
-
-$$S = V \times I$$
-
-## Power Factor
+## AC Power and Power Factor
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 1em;">
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube-nocookie.com/embed/Tv_7XWf96gg?start=535" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-Power factor (PF) is the ratio of real power to apparent power:
+When discussing AC power, we distinguish three quantities:
 
-$$PF = \frac{P}{S}$$
+- **Real power ($P$)**, measured in kW, is the net rate of electrical energy transfer. It includes useful output and equipment losses: a motor's electrical input kW is not its shaft output kW.
 
-Power factor ranges from 0 to 1 (often expressed as a percentage). A power factor of 1.0 (or 100%) means voltage and current are perfectly in phase, and all the apparent power is doing useful work. A power factor of 0.85 means only 85% of the apparent power is being converted to real power.
+- **Reactive power ($Q$)**, measured in kVAR, describes energy exchanged with magnetic or electric fields. Motors need magnetic fields to operate, but reactive power does not represent net useful energy transfer.
 
-**Why power factor matters:**
+- **Apparent power ($S$)**, measured in kVA, combines the voltage and current loading on the supply. 
 
-1. **Utility penalties.** Many utilities charge penalties when a facility's power factor drops below a threshold (commonly 0.90 or 0.95). This is because the utility must generate, transmit, and distribute the full apparent power even though only the real power is billable as energy consumption.
+For our purposes, we can assume these quantities form a right triangle. As such, we can use the pythagorean theorem to relate them: 
 
-2. **Capacity limitations.** Transformers, switchgear, and conductors are all rated in kVA (apparent power), not kW. A low power factor means you are using up capacity that could otherwise serve additional real load.
+$$S = \sqrt{P^2 + Q^2}$$
 
-3. **Increased losses.** Higher current (for the same real power) means greater I²R losses in conductors and transformers.
+Make sure to use consistent units: kW, kVAR, and kVA. 
 
-**Lagging vs. leading power factor:**
+### Calculating AC Power
 
-Inductive loads (motors, transformers) cause current to lag voltage, producing a lagging power factor. This is by far the most common situation in industrial facilities.
+Ok so now our power calculations are going to get a little more complicated. For simple single-phase loads, real power is: 
 
-Capacitive loads cause current to lead voltage, producing a leading power factor. This is less common but can occur with certain electronic equipment or when too many power factor correction capacitors are installed.
+$$P = V \times I \times \text{PF}$$
 
-## Power Factor Correction
+However, when we're dealing with three-phase loads, we have to account for the fact that there are three separate phases. For balanced three-phase loads, real power is:
 
-The most common method to improve (raise) a lagging power factor is to install power factor correction capacitors. Capacitors draw leading current, which partially cancels the lagging current drawn by inductive loads. The result is a net current that is more closely in phase with the voltage.
+$$P = \sqrt{3} \times V \times I \times \text{PF}$$
 
-Capacitors can be installed at individual motors (local correction), at motor control centers (group correction), or at the main service entrance (central correction). Each approach has trade-offs:
+Here $V$ the line-to-line voltage, $I$ the average current of the 3 lines, and $\text{PF}$ the power factor. Voltage is in volts and current in amperes. 
 
-| Location | Advantages | Disadvantages |
-|----------|------------|---------------|
-| Individual motor | Reduces current in all upstream conductors; correction automatically adjusts with motor operation | Higher installation cost; more capacitors to maintain |
-| Motor control center | Reasonable balance of cost and effectiveness; easier to maintain than individual units | Does not reduce current in branch circuits |
-| Main service entrance | Lowest installation cost; simplest to maintain | Only reduces utility demand charges; does not reduce internal conductor loading |
+!!! example "Three-phase motor electrical input"
 
-**Sizing capacitors:**
+    A balanced motor load draws 15 A per line at 480 V line-to-line, with a measured power factor of 0.85.
 
-The reactive power (kVAR) needed to correct from an initial power factor (PF₁) to a target power factor (PF₂) can be calculated as:
+    $$S = \frac{\sqrt{3}\times480\times15\times0.85}{1000} = 10.6 \text{ kW}$$
 
-$$Q_{correction} = P \times (\tan(\cos^{-1}(PF_1)) - \tan(\cos^{-1}(PF_2)))$$
+    The 10.60 kW is electrical input, not shaft output. Shaft output also depends on motor efficiency. If the motor is 90% efficient, its shaft output is 9.54 kW.
 
-Where P is the real power in kW.
+### Power Factor
 
-!!! example
+Power factor is real power divided by apparent power:
 
-    To correct a 100 kW load from 0.80 PF to 0.95 PF:
+$$\text{PF} = \frac{P}{S}$$
 
-    $$Q_{correction} = 100 \times (\tan(\cos^{-1}(0.80)) - \tan(\cos^{-1}(0.95)))$$
+For a any given load, power-factor magnitude ranges from 0 to 1. A 100 kW load at 0.85 PF requires approximately 118 kVA. **This does not mean that 15% of its energy is wasted.** Power factor describes supply loading; efficiency describes useful output divided by real energy input.
 
-    $$Q_{correction} = 100 \times (0.75 - 0.33) = 42 \text{ kVAR}$$
+**Why it matters in an assessment:**
 
-!!! warning
+- **Billing:** The rate tariff (document that describes how electricity is billed) may include a power-factor penalty, adjusted kW demand, kVA demand, or reactive-power charges. Savings depend on the actual tariff.
+- **Capacity:** Transformers have kVA ratings; conductors and switchgear have current limits. Low PF requires more current for the same real power at a given voltage.
+- **Losses:** Higher current increases $I^2R$ losses in the conductors carrying that current.
 
-    Over-correction (installing too much capacitance) can create a leading power factor, which some utilities also penalize. Additionally, capacitors can interact with harmonic currents in the system to create resonance problems. A qualified engineer should review any significant power factor correction installation.
+If power factor is low, the facility may be able to reduce energy costs by improving it. This can be done by adding capacitors to offset reactive power. However, this is not always the best solution; it depends on the tariff and the load profile. 
 
-## Demand vs. Consumption
+## Check Your Understanding
 
-With the electrical context established, we can now be more precise about demand and consumption:
+**1. Is voltage multiplied by current enough to determine a three-phase motor's real input power?**
 
-**Consumption** is the total energy used over time, measured in kilowatt-hours (kWh). It equals the integral of real power over time. Your energy charge on the utility bill reflects consumption.
+??? question "Show answer"
 
-**Demand** is the average power drawn during a defined interval (typically 15 or 30 minutes), measured in kilowatts (kW). The utility records the highest demand interval during the billing period, and this peak demand determines your demand charge.
+    No. For a balanced load, you need line-to-line RMS voltage, line RMS current, and power factor, plus the three-phase factor of $\sqrt{3}$. The result is electrical input; motor efficiency is needed to estimate shaft output.
 
-Because demand is based on real power (kW) while equipment sizing is based on apparent power (kVA), a low power factor effectively wastes capacity. If a facility is approaching the limits of its electrical infrastructure, power factor correction can defer or eliminate the need for expensive upgrades.
+**2. A 100 kW load's power factor improves from 0.80 to 0.95. Has its process energy use fallen by 15%?**
+
+??? question "Show answer"
+
+    No. In this idealized example, real power remains 100 kW, so the load uses the same kWh for the same operating hours. Supply kVA and current decrease. Upstream resistive losses may fall, and the bill may decrease if the tariff rewards the change.

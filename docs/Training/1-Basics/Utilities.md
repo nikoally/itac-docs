@@ -4,29 +4,21 @@ Before you can identify energy savings opportunities at a facility, you need to 
 
 ## Electricity Billing: Consumption and Demand
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 1em;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube-nocookie.com/embed/FShr6CHCmec" title="IAC 101 Episode 3: Electricity Billing and Demand Management with Mike Muller" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 Commercial electricity billing differs fundamentally from residential billing. While homeowners pay a simple rate per kilowatt-hour, commercial and industrial accounts face a two-part rate structure that separates consumption charges from demand charges. Understanding this distinction is critical for energy assessment work.
 
 ### Consumption Charges
 
 Consumption charges are based on total electricity used over the billing period, measured in kilowatt-hours (kWh). This is the straightforward part: if a facility uses 100,000 kWh in a month at $0.07 per kWh, the consumption charge is $7,000.
 
-!!! example
-
-    A facility uses 100,000 kWh in a month at $0.07 per kWh. The consumption charge is:
-
-    $$100{,}000 \text{ kWh} \times \$0.07/\text{kWh} = \$7{,}000$$
-
 When you recommend efficiency measures like lighting upgrades, VFD installations, or compressed air leak repairs, the kWh savings translate directly into consumption charge reductions. Your savings calculations will multiply annual kWh saved by the consumption rate to determine this portion of cost savings.
 
 ### Demand Charges
 
-Demand charges are based on peak power draw, measured in kilowatts (kW). The utility records the facility's demand in 15-minute intervals throughout the billing period and charges based on the single highest interval.
-
-!!! example
-
-    A facility's peak 15-minute average was 450 kW and the demand rate is $12 per kW. The demand charge is:
-
-    $$450 \text{ kW} \times \$12/\text{kW} = \$5{,}400$$
+For a kW-based demand tariff, demand charges reflect average real power over a defined interval, often 15 or 30 minutes. The example below uses the highest 15-minute average in the billing period. Check the actual tariff: some accounts use kVA demand, restricted peak windows, or billing adjustments such as ratchets.
 
 !!! note "Why Demand Charges Matter"
 
@@ -105,11 +97,27 @@ Rather than monthly bills based on metered consumption, facilities purchase fuel
     A facility purchases 5,000 gallons of propane at $2.50/gallon. To compare the energy cost to natural gas:
 
     Total energy content:
+
     $$ 5{,}000 \text{ gal} \times 0.092 \text{ MMBtu/gal} = 460 \text{ MMBtu} $$
 
     Cost per MMBtu:
+
     $$ \frac{\$2.50/\text{gal}}{0.092 \text{ MMBtu/gal}} = \$27.17/\text{MMBtu} $$
 
 !!! tip
 
     When conducting assessments at facilities with delivered fuels, you'll need to gather delivery records and tank level data to reconstruct consumption patterns. Annual fuel purchase records from accounting may be easier to obtain than delivery-by-delivery data. Be aware that timing differences between deliveries and actual consumption can make month-to-month analysis less precise than with metered utilities.
+
+## Check Your Understanding
+
+**1. A facility turns off unnecessary equipment overnight but still reaches the same daytime peak. Which charge is most directly reduced?**
+
+??? question "Show answer"
+
+    Consumption charges fall because the facility uses fewer kWh. Its kW demand charge may stay unchanged because the billed peak has not fallen. Check the tariff's time windows and adjustments before assigning demand savings.
+
+**2. A facility lowers its measured demand from 450 kW to 350 kW, but a historical peak of 500 kW sets an 80% ratchet floor. What demand is billed?**
+
+??? question "Show answer"
+
+    Under this illustrative tariff, the floor is 400 kW. Billed demand falls from 450 kW to 400 kW, not to 350 kW. The billed reduction is 50 kW even though measured demand fell by 100 kW; the historical peak continues to matter until the ratchet no longer applies.

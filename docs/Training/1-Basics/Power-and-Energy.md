@@ -1,202 +1,100 @@
 # Power and Energy
 
-## Part 1: Basic Electrical Relationships
+An energy assessment starts with two different questions: **How much power does the equipment draw?** and **How much energy does it use over time?** Keeping those questions separate is essential when interpreting measurements and estimating savings.
+
+## Power Versus Energy
+
+- **Power** is the rate of energy transfer. A watt is one joule per second; a kilowatt is 1,000 watts. 
+
+- **Energy** is the accumulated quantity transferred. A kilowatt-hour is the energy used by a steady 1 kW load operating for one hour.
+
+For a constant load:
+
+$$E = P \times t$$
+
+With $P$ in kW and $t$ in hours, $E$ is in kWh.
+
+Reducing operating hours saves energy without reducing the power drawn when equipment is on. Reducing the operating power can save energy too, but only if the equipment is on for the same amount of time. 
+
+## Basic Electrical Relationships
 
 ### Ohm's Law
 
-The foundation of electrical circuit analysis is Ohm's Law, which describes the relationship between voltage, current, and resistance:
+Voltage is the electrical potential difference that drives current. Current is the flow of electric charge, and resistance opposes that flow. For a resistive circuit:
 
 $$V = IR$$
 
-Where:
+where $V$ is voltage in volts, $I$ is current in amperes, and $R$ is resistance in ohms. 
 
-- $V$ = Voltage (Volts, V)
-- $I$ = Current (Amperes, A)
-- $R$ = Resistance (Ohms, $\Omega$)
+For a DC electrical load, electrical power is $P = VI$. For a purely resistive load, substituting Ohm's law gives:
 
-Voltage represents the electrical potential difference that drives current through a circuit. Current is the flow of electric charge. Resistance opposes that flow.
+$$P = VI = I^2R = \frac{V^2}{R}$$
 
-**Example:** If a heating element has a resistance of 10 $\Omega$ and draws 12 A of current, the voltage across it is:
+!!! example "Space Heaters"
 
-$$V = (12 \text{ A})(10 \text{ }\Omega) = 120 \text{ V}$$
+    A purely resistive heater has a nameplate power rating of 1200 W. It is supplied with 120 V RMS and stays fully on for 8 hours. How much energy does it use?
+    
+    \[\begin{align}
+    E &= P \times t \\
+    &= 1.2 \text{ kW} \times 8 \text{ h} \\
+    &= 9.6 \text{ kWh} \\
+    \end{align}\]
 
-### Electrical Power
+    Now, if we installed a thermostat that cycles the heater on and off, with an average duty cycle of 80% (meaning it now runs for 80% of the time), the energy use is reduced:
 
-Power is the rate at which energy is transferred or consumed. For electrical systems, power can be expressed in several equivalent forms derived from Ohm's Law:
+    \[\begin{align}
+    t_{new} &= 8 \text{ h} \times 0.8 \\
+    &= 6.4 \text{ h} \\
+    E_{new} &= P \times t_{new} \\
+    &= 1.2 \text{ kW} \times 6.4 \text{ h} \\
+    &= 7.68 \text{ kWh} \\
+    \end{align}\]
 
-$$P = IV$$
+    We can then calculate the savings from installing the thermostat:
+    
+    \[\begin{align}
+    \text{Savings} &= E - E_{new} \\
+    &= 9.6 \text{ kWh} - 7.68 \text{ kWh} \\
+    &= 1.92 \text{ kWh} \\
+    \end{align}\]
 
-Substituting $V = IR$ gives us:
+## Thermal Energy and Power
 
-$$P = I(IR) = I^2R$$
+Electrical and thermal units describe the same two quantities: energy and its rate of transfer. kW can describe heat output as well as electrical input.
 
-Alternatively, substituting $I = \frac{V}{R}$ gives us:
+A **British thermal unit (Btu)** is approximately the energy needed to raise one pound of water by 1°F. **MMBtu** means one million Btu. Btu/hr and MMBtu/hr are rates, not quantities of energy. There's a few conversions you need to know: 
 
-$$P = \frac{V^2}{R}$$
+- 1 Btu ≈ 1,055 J
+- 1 MMBtu = 1,000,000 Btu
+- 1 therm = 100,000 Btu = 0.1 MMBtu
+- 1 kWh ≈ 3,412 Btu ≈ 0.003412 MMBtu
+- 1 kW ≈ 3,412 Btu/hr ≈ 0.003412 MMBtu/hr
 
-Where:
+!!! note "Read the rating, not just the unit"
 
-- $P$ = Power (Watts, W)
-- $I$ = Current (Amperes, A)
-- $V$ = Voltage (Volts, V)
-- $R$ = Resistance (Ohms, $\Omega$)
+    A rating in Btu/hr may describe **fuel input** or **useful heat output**. They are not interchangeable. Also verify whether an abbreviation such as MBtu means thousands or millions in the source document; use MMBtu explicitly for millions here.
 
-**Example:** A motor draws 15 A at 480 V. Its power consumption is:
+!!! example "Boiler fuel input versus useful heat"
 
-$$P = (15 \text{ A})(480 \text{ V}) = 7{,}200 \text{ W}$$
+    A boiler operates continuously at a **fuel input** of 15 MMBtu/hr for 6 hours. Assume an illustrative constant efficiency of 80%.
 
-### The Watt
+    $$E_{\text{input}} = 15 \times 6 = 90 \text{ MMBtu}$$
 
-One Watt represents one Joule of energy transferred per second:
+    $$E_{\text{useful}} = 90 \times 0.80 = 72 \text{ MMBtu}$$
 
-$$1 \text{ W} = 1 \frac{\text{J}}{\text{s}}$$
+    Its useful heat output rate is 12 MMBtu/hr. If the boiler cycles or operates at reduced load, use actual fuel input over time rather than multiplying its full-load rating by elapsed hours, similar to what we did with the duty cycle in the previous example.
 
-This is a rate, not a quantity of energy. When you see a 100 W light bulb, that tells you how quickly it uses energy, not how much total energy it uses.
+## Check Your Understanding
 
-## Part 2: Power Units in Practice
+**1. A machine's operating power stays the same, but its daily on-time is cut in half. What is the effect on energy use?**
 
-### Kilowatts (kW)
+??? question "Show answer"
 
-In industrial settings, power consumption is typically measured in kilowatts rather than watts because the numbers become unwieldy otherwise.
+    Its energy use is halved if the operating load is unchanged and off-state consumption is negligible. Its operating kW does not change. 
 
-$$1 \text{ kW} = 1{,}000 \text{ W}$$
+**2. Two boilers have the same fuel input rating, but one is more efficient. Do they deliver the same heat?**
 
-**Converting our motor example:**
+??? question "Show answer"
 
-$$P = 7{,}200 \text{ W} \times \frac{1 \text{ kW}}{1{,}000 \text{ W}} = 7.2 \text{ kW}$$
-
-This motor operates at 7.2 kW. On a utility bill, you may see "demand charges" based on peak kW usage during a billing period.
-
-### Kilowatt-Hours (kWh)
-
-While kW measures the rate of energy use, kWh measures the total quantity of energy consumed over time. 
-
-$$\text{Energy} = \text{Power} \times \text{Time}$$
-
-$$\text{kWh} = \text{kW} \times \text{hours}$$
-
-**Example:** If our 7.2 kW motor runs for 8 hours, it consumes:
-
-$$E = (7.2 \text{ kW})(8 \text{ h}) = 57.6 \text{ kWh}$$
-
-!!! tip
-
-    On utility bills, you pay for kWh consumed (consumption charges) and often for peak kW demand (demand charges). These are separate line items.
-
-### Summary of Electrical Units
-
-| Quantity | Unit | Symbol | What It Measures |
-|----------|------|--------|------------------|
-| Voltage | Volt | V | Electrical potential difference |
-| Current | Ampere | A | Flow of electric charge |
-| Resistance | Ohm | $\Omega$ | Opposition to current flow |
-| Power | Watt / Kilowatt | W / kW | Rate of energy transfer |
-| Energy | Kilowatt-hour | kWh | Total energy consumed |
-
-## Part 3: Thermal Energy Units
-
-### The BTU
-
-When we move beyond electrical systems to thermal processes (boilers, furnaces, ovens, HVAC), we often use British Thermal Units (BTU). By definition, one BTU is the amount of energy required to raise the temperature of one pound of water by one degree Fahrenheit.
-
-$$1 \text{ BTU} \approx 1{,}055 \text{ J}$$
-
-### BTU/hr: Thermal Power
-
-Just as kW measures electrical power, BTU/hr measures thermal power (the rate of heat transfer).
-
-$$\text{BTU/hr} = \frac{\text{BTU}}{\text{hour}}$$
-
-A furnace rated at 100,000 BTU/hr can deliver 100,000 BTU of heat energy every hour it operates at full capacity.
-
-### MMBtu: Scaling Up
-
-In industrial settings, thermal energy quantities become very large. We use MMBtu (one million BTU) to keep numbers manageable.
-
-$$1 \text{ MMBtu} = 1{,}000{,}000 \text{ BTU} = 10^6 \text{ BTU}$$
-
-!!! note "MMBtu Notation"
-
-    The "MM" comes from the Roman numeral system where M = 1,000, so MM = 1,000 × 1,000 = 1,000,000. You may also see this written as MBtu in some contexts, but MMBtu is standard in the energy industry.
-
-### MMBtu/hr: Industrial Thermal Power
-
-For large equipment like industrial boilers, we measure thermal power in MMBtu/hr.
-
-$$\text{MMBtu/hr} = \frac{\text{MMBtu}}{\text{hour}}$$
-
-**Example:** A boiler rated at 15 MMBtu/hr operating for 6 hours delivers:
-
-$$E = (15 \text{ MMBtu/hr})(6 \text{ h}) = 90 \text{ MMBtu}$$
-
-## Part 4: Connecting Electrical and Thermal Units
-
-### The Conversion Factor
-
-Since both kWh and BTU measure energy, we can convert between them:
-
-$$1 \text{ kWh} = 3{,}412 \text{ BTU}$$
-
-This conversion is exact by definition.
-
-### Converting kWh to MMBtu
-
-$$1 \text{ kWh} = 3{,}412 \text{ BTU} \times \frac{1 \text{ MMBtu}}{1{,}000{,}000 \text{ BTU}} = 0.003412 \text{ MMBtu}$$
-
-Or equivalently:
-
-$$1 \text{ MMBtu} = \frac{1{,}000{,}000 \text{ BTU}}{3{,}412 \text{ BTU/kWh}} \approx 293.1 \text{ kWh}$$
-
-### Converting kW to MMBtu/hr
-
-Since these are both rates (power), the same conversion factor applies:
-
-$$1 \text{ kW} = 0.003412 \text{ MMBtu/hr}$$
-
-$$1 \text{ MMBtu/hr} \approx 293.1 \text{ kW}$$
-
-**Example:** An electric resistance heater operates at 50 kW. Express this in MMBtu/hr:
-
-$$P = 50 \text{ kW} \times 0.003412 \frac{\text{MMBtu/hr}}{\text{kW}} = 0.171 \text{ MMBtu/hr}$$
-
-## Part 5: Practical Applications
-
-### Reading a Utility Bill
-
-When you review a facility's utility bills, you will encounter:
-
-**Electric Bill:**
-
-- kWh consumed (energy charge)
-- Peak kW demand (demand charge)
-- Rate structures in $/kWh and $/kW
-
-**Natural Gas Bill:**
-
-- Therms or CCF consumed (1 therm = 100,000 BTU = 0.1 MMBtu)
-- Sometimes reported directly in MMBtu
-- Rate structures in $/therm or $/MMBtu
-
-### Comparing Energy Sources
-
-**Example:** A facility can heat a process with either electricity at $0.12/kWh or natural gas at $1.05/CCF. Which is cheaper per unit of energy delivered?
-
-First, we need to convert CCF to MMBtu. One CCF (hundred cubic feet) of natural gas contains approximately 1.03 therms of energy, and since 1 therm = 0.1 MMBtu:
-
-$$1 \text{ CCF} \approx 1.03 \text{ therms} \times 0.1 \frac{\text{MMBtu}}{\text{therm}} = 0.103 \text{ MMBtu}$$
-
-For electricity:
-
-$$\frac{\$0.12}{\text{kWh}} \times \frac{1 \text{ kWh}}{0.003412 \text{ MMBtu}} = \frac{\$35.17}{\text{MMBtu}}$$
-
-For natural gas:
-
-$$\frac{\$1.05}{\text{CCF}} \times \frac{1 \text{ CCF}}{0.103 \text{ MMBtu}} = \frac{\$10.19}{\text{MMBtu}}$$
-
-Natural gas is significantly cheaper per unit of energy in this example.
-
-!!! tip
-
-    This comparison assumes 100% efficiency for both systems. In practice, you must account for equipment efficiencies, which we cover in later training modules.
-
+    No. At the same actual fuel input, the more efficient boiler delivers more useful heat. To compare fuel consumption fairly, compare them while delivering the same useful heat, not merely while operating for the same time.
 
