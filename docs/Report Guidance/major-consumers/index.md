@@ -9,9 +9,9 @@ The Major Energy Consumers section characterizes every system at the facility th
 
 Every major consumer present at the facility belongs here, even when no recommendation touches it. The section is a complete account of the load, not a list of the systems we happened to find savings in. A reader should be able to reconstruct roughly the whole energy bill from this section alone. If a system is omitted because nothing could be recommended for it, the account no longer balances and the reader loses the ability to sanity-check everything that follows.
 
-## The three-tier information model
+## The two-tier information model
 
-The section organizes information into three tiers, each with a different job. Deciding which tier a given piece of information belongs to is the main discipline of writing this section, so it is worth stating the model up front.
+The section organizes information into two tiers, each with a different job. Deciding which tier a given piece of information belongs to, and whether it belongs in the section at all, is the main discipline of writing this section, so it is worth stating the model up front.
 
 ### Tier 1: the summary table
 
@@ -21,19 +21,15 @@ One row per system. Each row carries a one-line description of what the system i
 
 One paragraph per system in the body of the report. The paragraph characterizes the system and, crucially, carries the anchor values that recommendations later cite. These are the numbers the rest of the report depends on, so they live in the body where they are easy to find and easy to check.
 
-### Tier 3: the appendix
+In the report's LaTeX, both tiers live in the body section (Report Sections, Major-Consumers.tex: the summary table followed by the system paragraphs). There is no Major Consumers appendix.
 
-All evidentiary detail: nameplate tables, raw combustion data, fixture inventories, logged data. This is where a skeptical reader goes to see the basis for an anchor value, but it is not where the narrative lives. The appendix supports the body; it does not duplicate it.
+### The test for what goes in the paragraph
 
-In the report's LaTeX, the first two tiers live in the body section (Report Sections, Major-Consumers.tex: the summary table followed by the system paragraphs), and the third lives in the appendix (Appendices, Major-Systems-App.tex). Every system kept in the summary table must have a matching appendix subsection, and vice versa.
-
-### The test for body versus appendix
-
-The single question that decides whether a number belongs in the Tier 2 paragraph rather than the Tier 3 appendix:
+The single question that decides whether a number belongs in the Tier 2 paragraph:
 
 Does a recommendation elsewhere in the report reference this number?
 
-If a savings calculation cites a value, that value belongs in the body paragraph. The supporting evidence behind it (the per-unit breakdown, the logged trace, the full nameplate) goes to the appendix. Apply this test deliberately: a body paragraph crowded with detail that nothing downstream uses is as much a failure as an appendix that hides a number a recommendation depends on.
+If a savings calculation cites a value, that value belongs in the body paragraph. Apply this test deliberately: a paragraph crowded with detail that nothing downstream uses is as much a failure as one that leaves out a number a recommendation depends on.
 
 ## The universal spine
 
