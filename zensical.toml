@@ -89,7 +89,6 @@ nav = [
             "Recommendations/HVAC/exhaust-fan-vfd.md",
             "Recommendations/HVAC/hvac-maintenance.md",
             "Recommendations/HVAC/condenser-coil-airflow.md",
-            "Recommendations/HVAC/boiler-maintenance.md",
             ]},
         {"Boiler" = [
             "Recommendations/Boiler/condensing-heat-exchanger.md",
